@@ -3,6 +3,7 @@ package com.example.cak37.calvindatingwip;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -16,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -53,15 +55,18 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private EditText mUsernameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
+        mUsernameView = (EditText) findViewById(R.id.username);
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -126,8 +131,14 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
             cancel = true;
         } else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
-            Toast.makeText(getBaseContext(), "Must have @calvin.edu email",
-                    Toast.LENGTH_LONG).show();
+
+            //Displays toast in middle of screen
+            Toast toast = Toast.makeText(getBaseContext(), "Must have @sudents.calvin.edu email",
+                    Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+
+
             focusView = mEmailView;
             cancel = true;
         }
@@ -288,6 +299,13 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
             if (success) {
                 finish();
+                Intent i = new Intent(getBaseContext(), MainActivity.class);
+                i.putExtra("UserName", mUsernameView.getText().toString());
+                startActivity(i);
+
+                Toast.makeText(getBaseContext(), "I offer my Heart.",
+                        Toast.LENGTH_LONG).show();
+
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
@@ -298,6 +316,8 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
         protected void onCancelled() {
             mAuthTask = null;
             showProgress(false);
+
+
         }
     }
 }

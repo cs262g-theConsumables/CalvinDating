@@ -48,8 +48,6 @@ public class Splash extends MainActivity {
                 finish();
                 Intent i = new Intent(getBaseContext(), Login.class);
                 startActivity(i);
-                Toast.makeText(getBaseContext(), "I offer my Heart.",
-                        Toast.LENGTH_LONG).show();
             }
 
             @Override
