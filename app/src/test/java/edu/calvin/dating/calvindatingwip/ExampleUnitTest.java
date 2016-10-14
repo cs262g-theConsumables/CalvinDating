@@ -1,4 +1,4 @@
-package com.example.cak37.calvindatingwip;
+package edu.calvin.dating.calvindatingwip;
 
 import org.junit.Test;
 

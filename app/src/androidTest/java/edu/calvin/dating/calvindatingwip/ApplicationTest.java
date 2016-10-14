@@ -1,4 +1,4 @@
-package com.example.cak37.calvindatingwip;
+package edu.calvin.dating.calvindatingwip;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
