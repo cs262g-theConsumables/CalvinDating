@@ -3,8 +3,10 @@ package edu.calvin.dating.calvindatingwip;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 
 /**
@@ -24,31 +26,38 @@ public class Splash extends MainActivity {
         //sets the default screen as the splash screen
         setContentView(edu.calvin.dating.calvindatingwip.R.layout.splash);
 
-        //spins the loading dial
-        ProgressDialog progress = new ProgressDialog(this);
-        progress.setIndeterminate(true);
-        progress.setProgress(0);
-        progress.show();
+//        //spins the loading dial
+//        ProgressDialog progress = new ProgressDialog(this);
+//        progress.setIndeterminate(true);
+//        progress.setProgress(0);
+//        progress.show();
 
-        //this should show a logo and make it grow
-        final ImageView logo = (ImageView) findViewById(edu.calvin.dating.calvindatingwip.R.id.imageView);
-        final Animation an = AnimationUtils.loadAnimation(getBaseContext(), edu.calvin.dating.calvindatingwip.R.anim.growlogo);
-        logo.startAnimation(an);
+//        //this should show a logo and make it grow
+//        final ImageView logo = (ImageView) findViewById(edu.calvin.dating.calvindatingwip.R.id.imageView);
+//        Animation an = AnimationUtils.loadAnimation(getBaseContext(), edu.calvin.dating.calvindatingwip.R.anim.growlogo);
+//        logo.startAnimation(an);
 
-        //once the animation is done, it moves onto the login screen
-        an.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {}
+//        //once the animation is done, it moves onto the login screen
+//        an.setAnimationListener(new Animation.AnimationListener() {
+//            @Override
+//            public void onAnimationStart(Animation animation) {}
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//                finish();
+//                Intent i = new Intent(getBaseContext(), Login.class);
+//                startActivity(i);
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animation animation) { }
+//        });
 
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                finish();
-                Intent i = new Intent(getBaseContext(), Login.class);
-                startActivity(i);
+        final Button signinButton = (Button) findViewById(R.id.signinButton);
+        signinButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setContentView(R.layout.activity_login);
             }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) { }
         });
 
     }

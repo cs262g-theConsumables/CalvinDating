@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,40 +12,31 @@
     tools:context="edu.calvin.dating.calvindatingwip.Splash"
     android:background="#650707">
 
-    <ImageView
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="64dp"
-        android:layout_marginStart="64dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="58dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginBottom="40dp"
-        android:layout_alignParentTop="true"
-        app2:srcCompat="@drawable/calvin" />
+        android:id="@+id/buttonLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
 
-    <ProgressBar
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_marginRight="70dp"
-        android:layout_marginEnd="70dp" />
+        <Button
+            android:text="SIGN IN"
+            android:layout_height="wrap_content"
+            android:id="@+id/signinButton"
+            android:layout_width="200dp"
+            android:elevation="0dp"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            style="@android:style/Widget.Button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calvin Dating Load Screen"
-        android:textSize="24sp"
-        android:textColor="#c5a518"
-        android:layout_marginBottom="41dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        <Button
+            android:text="SIGN UP"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/signupButton"
+            android:textStyle="normal|bold"
+            style="@android:style/Widget.Button" />
+    </LinearLayout>
+
 </RelativeLayout>
