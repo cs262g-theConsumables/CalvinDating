@@ -6,11 +6,8 @@ Christiaan, Shurjo, Russell, Karen, Paige, Javin and Prof. V
 
 Vision Statement
 ------------------------
-Our Calvin College dating app helps bring together individuals on Calvin's campus who are looking for a match made in heaven. Unlike OKCupid or Match.com, our app has only Calvin students in mind. This allows for our app to find the best possible match to the profile you have created. The app will involve four main menus that allow the user to create a profile, meet new people, talk to them, and plan dates. The app will have a simple AI that pulls information from surveys about date successes to provide better alternatives for the future.
+Our Calvin College dating app helps bring together individuals on Calvin's campus who are looking for a match made in heaven. Unlike OKCupid or Match.com, our app has only Calvin students in mind. This allows for our app to find the best possible match to the profile you have created. The app will involve four main menus that allow the user to create a profile, meet new people, talk to them, and plan dates. Users will be matched based on a simple survey that they are required to complete when they create their profile. The app will give suggestions for events to go on a date. 
 
-Survey: Tailored to Calvin students' interests
-Dates: Suggestions on or around campus.
-Local: Restrict search results to Calvin students.
 
 Project Management Records
 ------------------------
