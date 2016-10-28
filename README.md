@@ -32,10 +32,11 @@ Each section should summarizes the key architectural decisions documented in tha
 Supplemental Specifications 
 ------------------------
 1. Non-functional requirements
-    1. Only Calvin students can use the app
-    2. Compatable on all Android devices, not IOS
-    3. Using the app results in relationships
-    4. A user's profile is secure and doesn't allow for fake profiles
+        * These requirements are necessary for the app to be successful. But they are not specifically implementable.
+    1. Only Calvin students can use the app.
+    2. Compatable on all Android phones and some tablets, not IOS.
+    3. Using the app results in relationships.
+    4. A user's profile is secure and doesn't allow for fake profiles.
     5. The app is free from charge.
     6. Not open source. This coould lead to tampering with results.
 2. Test Suite — This test suite specifies how you will test your system and reports on how the testing went, including:
