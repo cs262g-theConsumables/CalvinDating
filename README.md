@@ -32,7 +32,7 @@ Each section should summarizes the key architectural decisions documented in tha
 Supplemental Specifications 
 ------------------------
 1. Non-functional requirements
-        * These requirements are necessary for the app to be successful. But they are not specifically implementable.
+-These requirements are necessary for the app to be successful. But they are not specifically implementable.
     1. Only Calvin students can use the app.
     2. Compatable on all Android phones and some tablets, not IOS.
     3. Using the app results in relationships.
