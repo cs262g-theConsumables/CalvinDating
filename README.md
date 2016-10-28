@@ -22,7 +22,7 @@ Github - https://github.com/cs262g-theConsumables
 
 N+1 Architectural Views 
 ------------------------
-— This section provides a variety of views of the system architecture, based on what the Unified Process calls a Software Architecture — — Document (SAD). This semester, we'll set N=4 by including the following views:
+— This section provides a variety of views of the system architecture, based on what the Unified Process calls a Software Architecture Document (SAD). This semester, we'll set N=4 by including the following views:
 — User View (the +1 view)
 — Logical View
 — Data View
