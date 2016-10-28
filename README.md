@@ -32,11 +32,11 @@ Each section should summarizes the key architectural decisions documented in tha
 
 Supplemental Specifications 
 ------------------------
-— This section lists the non-functional requirements of your system.
-Test Suite — This test suite specifies how you will test your system and reports on how the testing went, including:
-— Unit testing of your system modules (at levels 0 and 1) (if required by the instructor)
-— System testing of your system functions (at levels 1 and 2)
-— Usability testing
+- This section lists the non-functional requirements of your system.
+- Test Suite — This test suite specifies how you will test your system and reports on how the testing went, including:
+- Unit testing of your system modules (at levels 0 and 1) (if required by the instructor)
+- System testing of your system functions (at levels 1 and 2)
+- Usability testing
 
 Presentation Materials 
 ------------------------
