@@ -14,11 +14,11 @@ Local: Restrict search results to Calvin students.
 
 Project Management Records
 ------------------------
-Slack           -> https://the-consumables.slack.com/
+Slack   -> https://the-consumables.slack.com/
 
-Trello          -> https://trello.com/b/z3h9K37P
+Trello  -> https://trello.com/b/z3h9K37P
 
-Github          -> https://github.com/cs262g-theConsumables
+Github  -> https://github.com/cs262g-theConsumables
 
 Materials Repo  -> https://github.com/cs262g-theConsumables/Material
 
