@@ -39,6 +39,7 @@ Supplemental Specifications
     4. A user's profile is secure and doesn't allow for fake profiles.
     5. The app is free from charge.
     6. Not open source. This coould lead to tampering with results.
+    7. It should be usable and responsive as well, where usable is defined and understandable to most users in less than five minutes and responsive is defined by giving output within 3 seconds.
 2. Test Suite — This test suite specifies how you will test your system and reports on how the testing went, including:
 3. Unit testing of your system modules (at levels 0 and 1) (if required by the instructor)
 4. System testing of your system functions (at levels 1 and 2)
