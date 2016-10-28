@@ -14,11 +14,13 @@ Local: Restrict search results to Calvin students.
 
 Project Management Records
 ------------------------
-Slack  - https://the-consumables.slack.com/
+Slack           -> https://the-consumables.slack.com/
 
-Trello - https://trello.com/b/z3h9K37P
+Trello          -> https://trello.com/b/z3h9K37P
 
-Github - https://github.com/cs262g-theConsumables
+Github          -> https://github.com/cs262g-theConsumables
+
+Materials Repo  -> https://github.com/cs262g-theConsumables/Material
 
 N+1 Architectural Views 
 ------------------------
@@ -40,8 +42,8 @@ Supplemental Specifications
 
 Presentation Materials 
 ------------------------
-— This section includes the presentation materials for your two team presentations.
+- This section includes the presentation materials for your two team presentations.
 
 The System
 ------------------------
-— This section should allow a user to get a copy of your system (or system prototype), including on-line documentation, and install it in their own environment.
+- This section should allow a user to get a copy of your system (or system prototype), including on-line documentation, and install it in their own environment.
