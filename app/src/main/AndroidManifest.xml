@@ -31,7 +31,11 @@
             android:name=".Login"
             android:label="@string/title_activity_login" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".ProfileTab" />
+        <activity android:name=".MessageTab" />
+        <activity android:name=".CalendarTab" />
+        <activity android:name=".SearchTab"></activity>
     </application>
 
 </manifest>
