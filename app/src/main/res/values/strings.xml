@@ -14,4 +14,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="app_label">Calvin Dating</string>
+    <string name="search_hint">Enter Search</string>
+    <string name="search_title">Enter Search</string>
 </resources>
