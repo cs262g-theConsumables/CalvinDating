@@ -1,4 +1,4 @@
-# Calvin Dating App
+﻿# Calvin Dating App
 
 Thank You Stakeholders!
 ------------------------
@@ -45,7 +45,7 @@ Supplemental Specifications
 4. System testing of your system functions (at levels 1 and 2)
 5. Usability testing
 
-Presentation Materials 
+Presentation Materials  
 ------------------------
 - This section includes the presentation materials for your two team presentations.
 
