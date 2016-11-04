@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,12 +35,12 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+
         _nameText = (EditText) findViewById(R.id.input_name);
         _emailText = (EditText) findViewById(R.id.input_email);
         _passwordText = (EditText) findViewById(R.id.input_password);
         _signupButton = (Button) findViewById(R.id.btn_signup);
         _loginLink = (TextView) findViewById(R.id.link_login);
-
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
