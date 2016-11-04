@@ -2,6 +2,8 @@ package edu.calvin.dating.calvindatingwip;
 
 /**
  * Created by Loganvp on 11/2/2016.
+ *
+ * Based on the tutorial found here: http://sourcey.com/beautiful-android-login-and-signup-screens-with-material-design/
  */
 
 import android.app.ProgressDialog;
