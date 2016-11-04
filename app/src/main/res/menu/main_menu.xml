@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <!--adds the menu item-->
     <item android:id="@+id/show_about"
         android:title="About" />
     <item android:id="@+id/settings"
         android:title="Settings" />
+    <item android:id="@+id/search"
+        android:title="@string/search_title"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
 </menu>
