@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity" android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AboutActivity" />
-        <activity android:name=".SignupActivity" />
+        <activity android:name=".SignupActivity" android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ProfileTab" />
         <activity android:name=".MessageTab" />
