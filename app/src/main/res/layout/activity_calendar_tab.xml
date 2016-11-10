@@ -22,8 +22,8 @@
             android:weekNumberColor="@android:color/black"
             android:weekSeparatorLineColor="@android:color/black"
             android:splitMotionEvents="true"
-            android:clickable="false"
-            android:fadingEdge="horizontal|vertical" />
+            android:fadingEdge="horizontal|vertical"
+            android:clickable="false" />
 
         <Button
             android:text="Find more events at Calvin"
