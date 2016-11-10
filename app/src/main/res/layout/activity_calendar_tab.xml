@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Calander"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/calendarView"
+            android:focusedMonthDateColor="@color/calvinGold"
+            android:minDate="01/01/2016"
+            android:unfocusedMonthDateColor="@android:color/black"
+            android:weekNumberColor="@android:color/black"
+            android:weekSeparatorLineColor="@android:color/black"
+            android:splitMotionEvents="true"
+            android:clickable="false"
+            android:fadingEdge="horizontal|vertical" />
+
+        <Button
+            android:text="Find more events at Calvin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linkButton"
+            android:background="@color/calvinMaroon"
+            android:typeface="sans"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </LinearLayout>
 
 </RelativeLayout>

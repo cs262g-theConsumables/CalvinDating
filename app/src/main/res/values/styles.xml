@@ -3,11 +3,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--   your app branding color for the app bar -->
-        <item name="colorPrimary">#F3CD00</item>
+        <item name="colorPrimary">@color/calvinGold</item>
         <!--   darker variant for the status bar and contextual app bars -->
-        <item name="colorPrimaryDark">#97252B</item>
+        <item name="colorPrimaryDark">@color/calvinMaroon</item>
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="colorAccent">#FFFFFF</item>
+    </style>
+
+    <style name="AppThemeCalendar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/calvinGold</item>
     </style>
 
 </resources>
