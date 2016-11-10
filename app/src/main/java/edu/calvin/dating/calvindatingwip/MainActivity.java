@@ -3,6 +3,7 @@ package edu.calvin.dating.calvindatingwip;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -22,7 +23,7 @@ import android.view.MenuItem;
 //This will eventually be the entire dating app.
 public class MainActivity extends AppCompatActivity {
 
-    private SharedPreferences myPrefs;
+
 
     @Override
     //Initialization
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Calendar"));
         tabLayout.addTab(tabLayout.newTab().setText("Search"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
@@ -100,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
 }
 

@@ -3,8 +3,8 @@
     <CheckBoxPreference
 
         android:key="pref_username"
-        android:title="Hide Real Name"
-        android:summary="Real name is replaced with username until..."
+        android:title="Hide Real Name from Others"
+        android:summary="Until you both up-vote each other"
         />
 
 </PreferenceScreen>
