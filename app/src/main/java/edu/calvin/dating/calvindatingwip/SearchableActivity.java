@@ -4,6 +4,8 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 public class SearchableActivity extends AppCompatActivity {
 
@@ -19,8 +21,10 @@ public class SearchableActivity extends AppCompatActivity {
     }
 
     private void handleIntent(Intent intent) {
-
+        Log.d("TAG", "Search occurred");
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            Log.d("TAG", "Search occurred");
+            Toast.makeText(getApplicationContext(), "Search occurred", Toast.LENGTH_LONG).show();
             String query = intent.getStringExtra(SearchManager.QUERY);
             //use the query to search your data somehow
         }
