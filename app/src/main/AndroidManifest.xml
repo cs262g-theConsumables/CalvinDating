@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -34,12 +35,14 @@
         <activity android:name=".MessageTab" />
         <activity android:name=".CalendarTab" />
         <activity android:name=".SearchTab" />
+        <activity android:name=".WebViewActivity" />
         <activity android:name=".SearchableActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable"/>
-        </activity>    </application>
+        </activity>
+    </application>
 
 </manifest>
