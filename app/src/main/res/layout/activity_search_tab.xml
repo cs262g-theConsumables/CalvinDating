@@ -1,17 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:padding="16dp"
-        tools:context="com.example.messagingtutorial.app.ListUsersActivity"
         android:background="#ffffff"
-        android:id="@+id/profileListView">
+        android:id="@+id/profileListView"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3">
     </ListView>
+
+    <ImageButton
+        android:id="@+id/user_profile_photo"
+        android:layout_height="150dp"
+        android:background="@drawable/profile_circular_border_imageview"
+        android:elevation="8dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/emptyprofile"
+        android:layout_width="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/textView4"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/header_cover_image"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@color/calvinMaroon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:text="Princess Fiona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="normal|bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="I am everything you want. Think of it and I am that. "
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:textSize="15sp"
+        android:textStyle="normal|italic"
+        android:textColor="@color/white"
+        android:layout_width="350dp"
+        android:textAlignment="textStart"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:text="Recent Searches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textStyle="normal|bold"
+        android:textColor="@color/black"
+        android:background="@color/calvinGold"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_below="@+id/header_cover_image"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

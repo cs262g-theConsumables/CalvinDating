@@ -12,6 +12,9 @@ public class SearchableActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+        Intent intent1 = new Intent(getBaseContext(), SearchTab.class);
+        startActivity(intent1);
+
         handleIntent(getIntent());
     }
 
@@ -20,10 +23,15 @@ public class SearchableActivity extends AppCompatActivity {
         handleIntent(intent);
     }
 
+
+
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             //use the query to search your data somehow
+
+            Intent intent1 = new Intent(getBaseContext(), SearchTab.class);
+            startActivity(intent1);
         }
     }
 
