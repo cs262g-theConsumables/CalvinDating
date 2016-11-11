@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
     android:background="@color/calvinMaroon">
 
-
-    <LinearLayout
+        <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-        <ImageView
+            <ImageView
             android:src="@drawable/calvin_white"
             android:layout_width="wrap_content"
             android:layout_marginBottom="24dp"
@@ -32,51 +32,60 @@
             android:layout_weight="0.16"
             android:textSize="30sp"
             android:textAlignment="center"
-            android:textStyle="normal|bold|italic" />
+            android:textStyle="normal|bold|italic"
+            android:textColor="@color/white" />
 
         <!--  Name Label -->
-        <android.support.design.widget.TextInputLayout
+            <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+                android:layout_weight="0.16">
             <EditText android:id="@+id/input_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
                 android:hint="Name"
-                android:textColorLink="@android:color/white" />
-        </android.support.design.widget.TextInputLayout>
+                android:textColorLink="@android:color/white"
+                android:textColor="@color/white" />
+            </android.support.design.widget.TextInputLayout>
 
-        <!-- Email Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_email"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="Email"
-                android:textColorLink="@android:color/white" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0.16">
+                <EditText android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"
+                    android:textColorLink="@android:color/white"
+                    android:textColor="@color/white" />
+            </android.support.design.widget.TextInputLayout>
 
-        <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_password"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Password"
-                android:textColorLink="@android:color/white" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0.16">
+                <EditText android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="Password"
+                    android:textColorLink="@android:color/white"
+                    android:textColor="@color/white" />
+            </android.support.design.widget.TextInputLayout>
 
-        <!-- Signup Button -->
+            <!-- Email Label -->
+
+            <!-- Password Label -->
+
+            <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_signup"
             android:layout_width="fill_parent"
@@ -92,7 +101,8 @@
             android:layout_marginBottom="24dp"
             android:text="Already a member? Login"
             android:gravity="center"
-            android:textSize="16dip"/>
+            android:textSize="16dip"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 </ScrollView>

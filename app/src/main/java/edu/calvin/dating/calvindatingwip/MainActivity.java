@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Profile"));
         tabLayout.addTab(tabLayout.newTab().setText("Message"));
-        tabLayout.addTab(tabLayout.newTab().setText("Cal"));
+        tabLayout.addTab(tabLayout.newTab().setText("Dates"));
         tabLayout.addTab(tabLayout.newTab().setText("Find"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 

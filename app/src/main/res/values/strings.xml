@@ -19,4 +19,8 @@
     <string name="search_title">Enter Search</string>
     <string name="my_name">Joust Knight</string>
     <string name="user_name">jsk01</string>
+
+    <string name="hintTxtItem">Type message here ...</string>
+    <string name="lblBtnAdd">Send</string>
+    <string name="txtEmpty">List is empty</string>
 </resources>

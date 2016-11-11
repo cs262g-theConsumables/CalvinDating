@@ -41,11 +41,11 @@ public class SearchTab extends Fragment {
         //This is suppose to display the array onto the list view
         
 //        SimpleAdapter adapter = new SimpleAdapter(getActivity(), profilesArray, resource, from, to);
-
-//        ArrayAdapter<HashMap<String, String>> adapter = new
-//                ArrayAdapter<HashMap<String, String>>(getActivity(), resource, profilesArray);
+//
+//        ArrayAdapter<HashMap<String, String>> adapter1 = new
+//                ArrayAdapter<HashMap<String, String>>(getActivity().getBaseContext(), resource, profilesArray);
 //        profilesListView.setAdapter(adapter);
-
+//
 //        profilesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> a, View v, int i, long l) {

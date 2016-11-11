@@ -32,7 +32,9 @@
             android:layout_weight="0.16"
             android:textSize="30sp"
             android:textAlignment="center"
-            android:textStyle="normal|bold|italic" />
+            android:textStyle="normal|bold|italic"
+            android:textColor="@color/white"
+            />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -46,7 +48,8 @@
                 android:inputType="textEmailAddress"
                 android:hint="Email"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColorLink="@android:color/white" />
+                android:textColorLink="@android:color/white"
+                android:textColor="@android:color/white" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -61,8 +64,12 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="Password"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColorLink="@android:color/white" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+                android:textColorLink="@android:color/white"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif-medium"
+                android:singleLine="false"
+                android:selectAllOnFocus="false" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
@@ -80,7 +87,8 @@
             android:layout_marginBottom="24dp"
             android:text="No account yet? Create one"
             android:gravity="center"
-            android:textSize="16dip"/>
+            android:textSize="16dip"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 </ScrollView>

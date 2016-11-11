@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="Calvin Dating"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -41,6 +41,7 @@
         <activity android:name=".CalendarTab" />
         <activity android:name=".SearchTab" />
         <activity android:name=".WebViewActivity" />
+        <activity android:name=".PersonalMessageTab" />
 
         <activity android:name=".SearchableActivity" >
             <intent-filter>

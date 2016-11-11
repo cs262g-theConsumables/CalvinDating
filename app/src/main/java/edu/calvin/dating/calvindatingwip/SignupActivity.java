@@ -118,8 +118,10 @@ public class SignupActivity extends AppCompatActivity {
             _nameText.setError(null);
         }
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+
+        //this goes here !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        if (email.isEmpty() || !email.matches("jsk01@students.calvin.edu")) {
+            _emailText.setError("enter a valid Calvin email address");
             valid = false;
         } else {
             _emailText.setError(null);
