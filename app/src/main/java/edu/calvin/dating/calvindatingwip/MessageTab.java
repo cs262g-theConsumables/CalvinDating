@@ -57,8 +57,8 @@ public class MessageTab extends Fragment {
 
 
     public void buildList(){
-        names.add("Donkey");
         names.add("Fiona");
+        names.add("Donkey");
         names.add("Puss in Boots");
         names.add("Dragon");
         names.add("Farquaad");
