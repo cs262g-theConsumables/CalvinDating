@@ -18,10 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 
-//This will eventually be the entire dating app.
 public class MainActivity extends AppCompatActivity {
-
-
 
     @Override
     //Initialization

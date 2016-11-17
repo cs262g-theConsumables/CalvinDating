@@ -16,9 +16,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
-
+/*  SignupActivity
+ *  Creates a Signup screen. Uses username, email and password. Also has a
+ *  link to the login screen.
+ *
+ *  @authors:   Drew VL
+ *              Logan VP
+ */
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
@@ -28,7 +32,12 @@ public class SignupActivity extends AppCompatActivity {
     private Button _signupButton;
     private TextView _loginLink;
 
-
+    /*  OnCreate
+     *  Creates view for signup.
+     *
+     *  @param:    savedInstanceState
+     *  @authors:   Logan VP
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +66,13 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
+    /*  signup - Authenticates the user's credentials with the database
+     *  and handles if the signup succeeded or failed.
+     *
+     *  @return:     onSignupFailed  does this to inform the user
+     *                              of failed attempt.
+     *  @authors:   Logan VP
+     */
     public void signup() {
         Log.d(TAG, "Signup");
 
@@ -92,18 +108,33 @@ public class SignupActivity extends AppCompatActivity {
     }
 
 
+    /*  onSignupSuccess - activates the button only when signup was
+     *                   successful.
+     *
+     *  @authors:   Logan VP
+     */
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
         finish();
     }
 
+    /*  onSignupFailed - sends a message for failed signup. And
+     *                  doesn't finish.
+     *
+     *  @authors:   Logan VP
+     */
     public void onSignupFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
         _signupButton.setEnabled(true);
     }
 
+    /*  validate - checks for empty inputs and sends error if not valid.
+     *
+     *  @return:    valid   set to false if empty. True otherwise.
+     *  @authors:   Logan VP
+     */
     public boolean validate() {
         boolean valid = true;
 
@@ -118,8 +149,6 @@ public class SignupActivity extends AppCompatActivity {
             _nameText.setError(null);
         }
 
-
-        //this goes here !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
         if (email.isEmpty() || !email.matches("jsk01@students.calvin.edu")) {
             _emailText.setError("enter a valid Calvin email address");
             valid = false;

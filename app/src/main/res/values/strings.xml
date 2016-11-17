@@ -20,7 +20,30 @@
     <string name="my_name">Joust Knight</string>
     <string name="user_name">jsk01</string>
 
+    <!--For messaging tab -->
     <string name="hintTxtItem">Type message here ...</string>
     <string name="lblBtnAdd">Send</string>
     <string name="txtEmpty">List is empty</string>
+
+    <!--String resources for spinners -->
+    <string name="surveytitle">Praise</string>
+    <string name="f">Gripe</string>
+    <string name="fee">Suggestion</string>
+    <string name="feed">Bug</string>
+
+
+    <!--String resources for spinners -->
+    <string name="feedbacktype1">Praise</string>
+    <string name="feedbacktype2">Gripe</string>
+    <string name="feedbacktype3">Suggestion</string>
+    <string name="feedbacktype4">Bug</string>
+
+    <!--Spinner: -->
+    <string-array name="feedbacktypelist">
+        <item>@string/feedbacktype1</item>
+        <item>@string/feedbacktype2</item>
+        <item>@string/feedbacktype3</item>
+        <item>@string/feedbacktype4</item>
+    </string-array>
+
 </resources>

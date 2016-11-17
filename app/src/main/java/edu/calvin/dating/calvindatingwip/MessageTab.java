@@ -16,11 +16,21 @@ import android.widget.Switch;
 
 import java.util.ArrayList;
 
+    /*  MessageTab class - creates a view list of all the people the user can message
+     *
+     *  @authors: Drew VL, Logan VP
+     */
 public class MessageTab extends Fragment {
 
     private ArrayList<String> names;
     private ListView usersListView;
 
+    /*  onCreateView method - called to create the view for the tab
+     *
+     *  @params: inflater, container, savedInstanceState
+     *  @return:   view - the view of the tab
+     *  @authors: Drew VL, Logan VP
+     */
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_message_tab, container, false);
