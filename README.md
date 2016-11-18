@@ -6,7 +6,7 @@ Christiaan, Shurjo, Russell, Karen, Paige, Javin and Prof. V
 
 Vision Statement
 ------------------------
-Our Calvin College dating app helps bring together individuals on Calvin's campus who are looking for a match made in heaven. Unlike OKCupid or Match.com, our app has only Calvin students in mind. This allows for our app to find the best possible match to the profile you have created. The app will involve four main menus that allow the user to create a profile, meet new people, talk to them, and plan dates. Users will be matched based on a simple survey that they are required to complete when they create their profile. The app will give suggestions for events to go on a date. 
+Calvin Dating is the dating app that helps bring together individuals on the Calvin College campus who are looking for a match made in heaven. Unlike OKCupid or Match.com, Calvin Dating was crafted with only Calvin Students in mind. By specializing this app strictly to the Calvin College culture our users can find the best possible match to the profile that you have created. The app involves four main activities that allow the user to create a profile, meet new people, communicate with their matches, and plan multiple dates. Users will be matched on a Calvin centric survey that also takes into account factors from their MBTI survey to their preference on man-buns.
 
 
 Project Management Records
@@ -32,14 +32,16 @@ Each section should summarizes the key architectural decisions documented in tha
 Supplemental Specifications 
 ------------------------
 1. Non-functional requirements
--These requirements are necessary for the app to be successful. But they are not specifically implementable.
-    1. Only Calvin students can use the app.
-    2. Compatable on all Android phones and some tablets, not IOS.
-    3. Using the app results in relationships.
-    4. A user's profile is secure and doesn't allow for fake profiles.
-    5. The app is free from charge.
-    6. Not open source. This coould lead to tampering with results.
-    7. It should be usable and responsive as well, where usable is defined and understandable to most users in less than five minutes and responsive is defined by giving output within 3 seconds.
+-These requirements are necessary for the app to be successful, ut they are not specifically implementable.
+    1. Only Calvin students can use the app
+        a. Using the app results in relationships
+        b. A user's profile is secure and does not allow for fake profiles
+    2. The app is compatible on all Android devices, not IOS
+        a. The app is free of charge
+    3. The app is not open source to prevent tampering with matching results
+    4. The app is easily usable and responsive
+        a. Usable: The app is understood by most users in less than five minutes
+        b. Responsive: The user receives the desired output within three seconds and responsive is defined by giving output within 3 seconds.
 2. Test Suite — This test suite specifies how you will test your system and reports on how the testing went, including:
 3. Unit testing of your system modules (at levels 0 and 1) (if required by the instructor)
 4. System testing of your system functions (at levels 1 and 2)
