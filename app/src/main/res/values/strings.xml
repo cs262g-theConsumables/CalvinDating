@@ -33,17 +33,68 @@
 
 
     <!--String resources for spinners -->
-    <string name="feedbacktype1">Praise</string>
-    <string name="feedbacktype2">Gripe</string>
-    <string name="feedbacktype3">Suggestion</string>
-    <string name="feedbacktype4">Bug</string>
+    <string name="feedbacktype1">Freshman</string>
+    <string name="feedbacktype2">Sophomore</string>
+    <string name="feedbacktype3">Junior</string>
+    <string name="feedbacktype4">Senior</string>
+    <string name="feedbacktype5">Senior+</string>
+
+    <string name="feedbacktype11">1: Go Flying Dutchman!</string>
+    <string name="feedbacktype21">2</string>
+    <string name="feedbacktype31">3</string>
+    <string name="feedbacktype41">4</string>
+    <string name="feedbacktype51">5: Meh, they\'re okay.</string>
+    <string name="feedbacktype61">6</string>
+    <string name="feedbacktype71">7</string>
+    <string name="feedbacktype81">8</string>
+    <string name="feedbacktype91">9</string>
+    <string name="feedbacktype101">10: Burn Flying Dutchman!</string>
+
+    <string name="feedbacktype100">Commons</string>
+    <string name="feedbacktype200">Knollcrest</string>
+
+    <string name="feedbacktype300">Monday</string>
+    <string name="feedbacktype400">Tuesday</string>
+    <string name="feedbacktype500">Wednesday</string>
+    <string name="feedbacktype600">Thursday</string>
+    <string name="feedbacktype700">Friday</string>
+
+
+
 
     <!--Spinner: -->
-    <string-array name="feedbacktypelist">
+    <string-array name="feedbacktypeClass">
         <item>@string/feedbacktype1</item>
         <item>@string/feedbacktype2</item>
         <item>@string/feedbacktype3</item>
         <item>@string/feedbacktype4</item>
+        <item>@string/feedbacktype5</item>
+    </string-array>
+
+    <string-array name="feedbacktypeHate">
+        <item>@string/feedbacktype11</item>
+        <item>@string/feedbacktype21</item>
+        <item>@string/feedbacktype31</item>
+        <item>@string/feedbacktype41</item>
+        <item>@string/feedbacktype51</item>
+        <item>@string/feedbacktype61</item>
+        <item>@string/feedbacktype71</item>
+        <item>@string/feedbacktype81</item>
+        <item>@string/feedbacktype91</item>
+        <item>@string/feedbacktype101</item>
+    </string-array>
+
+    <string-array name="feedbacktypeDining">
+        <item>@string/feedbacktype100</item>
+        <item>@string/feedbacktype200</item>
+    </string-array>
+
+    <string-array name="feedbacktypeChapel">
+        <item>@string/feedbacktype300</item>
+        <item>@string/feedbacktype400</item>
+        <item>@string/feedbacktype500</item>
+        <item>@string/feedbacktype600</item>
+        <item>@string/feedbacktype700</item>
     </string-array>
 
 </resources>

@@ -33,6 +33,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".SurveyActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".SignupActivity" android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".SettingsActivity" />

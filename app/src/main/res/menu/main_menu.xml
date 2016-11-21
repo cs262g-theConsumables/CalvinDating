@@ -2,6 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <!--adds the menu item-->
+    <item android:id="@+id/survey"
+        android:title="Survey" />
     <item android:id="@+id/show_about"
         android:title="About" />
     <item android:id="@+id/settings"

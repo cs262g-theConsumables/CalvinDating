@@ -77,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "Login");
 
         //for the time
-        Intent i = new Intent(getBaseContext(), MainActivity.class);
-        startActivity(i);
+//        Intent i = new Intent(getBaseContext(), MainActivity.class);
+//        startActivity(i);
 
         if (!validate()) {
             onLoginFailed();
@@ -96,7 +96,8 @@ public class LoginActivity extends AppCompatActivity {
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        // TODO: Implement your own authentication logic here.
+        email = "jsk01@students.calvin.edu";
+        password = "calvin";
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
@@ -148,7 +149,11 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
+        Intent i = new Intent(getBaseContext(), MainActivity.class);
+        startActivity(i);
+
         finish();
+
     }
 
     /*  onLoginFailed - sends a message for failed login. And

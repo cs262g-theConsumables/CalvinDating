@@ -94,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
                 return true;
+            case R.id.survey:
+                //opens the new activity (survey page)
+                Intent surveyIntent = new Intent(this, SurveyActivity.class);
+                startActivity(surveyIntent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
