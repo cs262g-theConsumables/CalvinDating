@@ -13,7 +13,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
-
+/*  CalendarTab
+ *  Creates calendar tab fragment. It impliments an onclick listener that will bring the user to the WebView activity.
+ *
+ *  @return:    view    page viewer that inflates its own contect.
+ *  @authors:   Drew VL
+ *              Logan VP
+ */
 public class CalendarTab extends Fragment{
 
     @Override

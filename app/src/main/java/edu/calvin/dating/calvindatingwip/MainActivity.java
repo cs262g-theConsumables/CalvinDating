@@ -18,10 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 
-//This will eventually be the entire dating app.
 public class MainActivity extends AppCompatActivity {
-
-
 
     @Override
     //Initialization
@@ -96,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.settings:     //opens settings tab
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
+                return true;
+            case R.id.survey:
+                //opens the new activity (survey page)
+                Intent surveyIntent = new Intent(this, SurveyActivity.class);
+                startActivity(surveyIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

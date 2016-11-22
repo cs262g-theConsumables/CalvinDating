@@ -13,6 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/*  LoginActivity
+ *  Creates a Login screen. Uses email and password. Also has a
+ *  link to the registration screen.
+ *
+ *  @authors:   Drew VL
+ *              Logan VP
+ */
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
@@ -22,6 +29,12 @@ public class LoginActivity extends AppCompatActivity {
     private TextView _signupLink;
 
 
+    /*  OnCreate
+     *  Creates view for login.
+     *
+     *  @param:    savedInstanceState
+     *  @authors:   Logan VP
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +66,19 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /*  Login - Authenticates the user's credentials with the database
+     *  and handles if the login succeeded or failed.
+     *
+     *  @return:     onLoginFailed  does this to inform the user
+     *                              of failed attempt.
+     *  @authors:   Logan VP
+     */
     public void login() {
         Log.d(TAG, "Login");
 
         //for the time
-        Intent i = new Intent(getBaseContext(), MainActivity.class);
-        startActivity(i);
+//        Intent i = new Intent(getBaseContext(), MainActivity.class);
+//        startActivity(i);
 
         if (!validate()) {
             onLoginFailed();
@@ -76,7 +96,8 @@ public class LoginActivity extends AppCompatActivity {
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        // TODO: Implement your own authentication logic here.
+        email = "jsk01@students.calvin.edu";
+        password = "calvin";
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
@@ -89,7 +110,14 @@ public class LoginActivity extends AppCompatActivity {
                 }, 3000);
     }
 
-
+    /*  OnActivityResult - Implements successful signup logic
+     *  and checks the request codes and result returns.
+     *
+     *  @param:    requestCode  to check if a signup was actually requested
+     *             resultCode   if the validation was true
+     *             data
+     *  @authors:   Logan VP
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_SIGNUP) {
@@ -105,23 +133,45 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /*  onBackPressed - disable going back to the MainActivity
+     *
+     *  @authors:   Logan VP
+     */
     @Override
     public void onBackPressed() {
-        // disable going back to the MainActivity
         moveTaskToBack(true);
     }
 
+    /*  onLoginSuccess - activates the button only when login was
+     *                   successful.
+     *
+     *  @authors:   Logan VP
+     */
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
+        Intent i = new Intent(getBaseContext(), MainActivity.class);
+        startActivity(i);
+
         finish();
+
     }
 
+    /*  onLoginFailed - sends a message for failed login. And
+     *                  doesn't finish.
+     *
+     *  @authors:   Logan VP
+     */
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
         _loginButton.setEnabled(true);
     }
 
+    /*  validate - checks for empty inputs and sends error if not valid.
+     *
+     *  @return:    valid   set to false if empty. True otherwise.
+     *  @authors:   Logan VP
+     */
     public boolean validate() {
         boolean valid = true;
 
