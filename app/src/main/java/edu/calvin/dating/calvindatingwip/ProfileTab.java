@@ -1,5 +1,6 @@
 package edu.calvin.dating.calvindatingwip;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.content.Context;
 import android.widget.Toast;
@@ -35,6 +37,15 @@ public class ProfileTab extends Fragment{
         //create references to widgets
         myName = (TextView) view.findViewById(R.id.user_profile_name);
         setMyName();
+
+        Button button = (Button) view.findViewById(R.id.editProfile);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent aboutIntent = new Intent(getActivity(), EditProfileActivity.class);
+                ((MainActivity) getActivity()).startActivity(aboutIntent);
+            }
+        });
 
         return view;
 

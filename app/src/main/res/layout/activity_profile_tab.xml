@@ -39,24 +39,6 @@
             android:paddingBottom="24dp">
 
 
-            <ImageView
-                android:id="@+id/add_friend"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_toLeftOf="@+id/drop_down_option_menu"
-                android:src="@drawable/ic_action_user_add" />
-
-            <ImageView
-                android:id="@+id/drop_down_option_menu"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_action_name" />
-
             <TextView
                 android:id="@+id/user_profile_name"
                 android:layout_width="wrap_content"
@@ -78,6 +60,21 @@
                 android:text="Fun, lovable guy that never takes his helmet off. So I don't need to worry about helmet hair."
                 android:textColor="#fff"
                 android:textSize="14sp"
+                android:textAlignment="center" />
+
+            <Button
+                android:text="Edit Profile"
+                android:layout_width="100dp"
+                android:layout_height="33dp"
+                android:id="@+id/editProfile"
+                android:layout_marginRight="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@android:color/white"
+                android:background="@drawable/my_button_bg"
                 android:textAlignment="center" />
 
         </RelativeLayout>
