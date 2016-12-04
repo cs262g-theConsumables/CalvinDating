@@ -42,7 +42,7 @@ android:scrollbars="vertical">
     <EditText
         android:id="@+id/EditTextBirthday"
         android:layout_height="wrap_content"
-        android:hint="What is your Birthday?"
+        android:hint="What is your Birthday? (MM/DD/YYYY)"
         android:inputType="date"
         android:layout_width="fill_parent">
     </EditText>
