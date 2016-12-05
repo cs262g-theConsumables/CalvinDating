@@ -25,6 +25,22 @@
     <string name="lblBtnAdd">Send</string>
     <string name="txtEmpty">List is empty</string>
 
+    <!--Spinner:genderSelection -->
+    <string-array name="genderSelection">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <!--Spinner:genderSelection -->
+    <string-array name="gradeSelection">
+        <item>Freshman</item>
+        <item>Sophomore</item>
+        <item>Junior</item>
+        <item>Senior</item>
+        <item>5+ Year Senior</item>
+    </string-array>
+
     <!--String resources for spinners -->
     <string name="surveytitle">Praise</string>
     <string name="f">Gripe</string>
