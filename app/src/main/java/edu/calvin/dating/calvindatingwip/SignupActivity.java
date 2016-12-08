@@ -7,6 +7,7 @@ package edu.calvin.dating.calvindatingwip;
  */
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -116,6 +117,8 @@ public class SignupActivity extends AppCompatActivity {
     public void onSignupSuccess() {
         _signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
+        Intent i = new Intent(getBaseContext(), SurveyActivity.class);
+        startActivity(i);
         finish();
     }
 

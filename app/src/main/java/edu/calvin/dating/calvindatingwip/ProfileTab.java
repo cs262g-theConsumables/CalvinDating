@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
 import android.widget.Toast;
@@ -25,6 +26,9 @@ public class ProfileTab extends Fragment{
 
     private SharedPreferences myPrefs;
     private TextView myName;
+    private ImageView myImage;
+    private Button chooseImage;
+    private Button editProfile;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -38,12 +42,21 @@ public class ProfileTab extends Fragment{
         myName = (TextView) view.findViewById(R.id.user_profile_name);
         setMyName();
 
-        Button button = (Button) view.findViewById(R.id.editProfile);
-        button.setOnClickListener(new View.OnClickListener() {
+        editProfile = (Button) view.findViewById(R.id.editProfile);
+        editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent aboutIntent = new Intent(getActivity(), EditProfileActivity.class);
                 ((MainActivity) getActivity()).startActivity(aboutIntent);
+            }
+        });
+
+        chooseImage = (Button) view.findViewById(R.id.choosePhoto);
+        chooseImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent , 1);
             }
         });
 

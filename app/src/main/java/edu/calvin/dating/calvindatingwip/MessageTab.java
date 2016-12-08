@@ -45,9 +45,7 @@ public class MessageTab extends Fragment {
         usersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int i, long l) {
-                Intent intent = new Intent(getActivity().getBaseContext(), PersonalMessageTab.class);
-                startActivity(intent);
-                //openConversation(names, i);
+                openConversation(names, i);
             }
         });
 
@@ -60,8 +58,11 @@ public class MessageTab extends Fragment {
      *@authors: Drew VL
      *          Logan VP
      */
-    public void openConversation(ArrayList<String> names, int pos) {
-
+    public void openConversation(ArrayList<String> nameList, int pos) {
+        String name = nameList.get(pos);
+        Intent intent = new Intent(getActivity().getBaseContext(), PersonalMessageTab.class);
+        intent.putExtra("MESSAGE_TO",name);
+        startActivity(intent);
     }
 
 

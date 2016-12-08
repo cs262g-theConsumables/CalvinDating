@@ -26,13 +26,13 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 ProfileTab tab1 = new ProfileTab();
                 return tab1;
             case 1:
-                MessageTab tab2 = new MessageTab();
+                SearchTab tab2 = new SearchTab();
                 return tab2;
             case 2:
-                CalendarTab tab3 = new CalendarTab();
+                MessageTab tab3 = new MessageTab();
                 return tab3;
             case 3:
-                SearchTab tab4 = new SearchTab();
+                CalendarTab tab4 = new CalendarTab();
                 return tab4;
             default:
                 return null;

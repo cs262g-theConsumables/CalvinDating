@@ -63,10 +63,10 @@
                 android:textAlignment="center" />
 
             <Button
-                android:text="Edit Profile"
+                android:text="Like Profile"
                 android:layout_width="100dp"
                 android:layout_height="33dp"
-                android:id="@+id/editProfile"
+                android:id="@+id/likeProfile"
                 android:layout_marginRight="12dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginTop="16dp"
@@ -76,22 +76,6 @@
                 android:textColor="@android:color/white"
                 android:background="@drawable/my_button_bg"
                 android:textAlignment="center" />
-
-            <Button
-                android:text="Choose Photo"
-                android:layout_height="33dp"
-                android:textColor="@android:color/white"
-                android:background="@drawable/my_button_bg"
-                android:id="@+id/choosePhoto"
-                android:elevation="0dp"
-                android:textSize="12sp"
-                android:layout_width="100dp"
-                android:layout_alignBaseline="@+id/editProfile"
-                android:layout_alignBottom="@+id/editProfile"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="12dp"
-                android:layout_marginStart="12dp" />
 
         </RelativeLayout>
 

@@ -13,13 +13,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class PersonalMessageTab extends ListActivity {
 
-    ArrayList<String> list = new ArrayList<String>();
-    ArrayAdapter<String> adapter;
+    private ArrayList<String> list = new ArrayList<String>();
+    private ArrayAdapter<String> adapter;
+    private TextView messageName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,10 @@ public class PersonalMessageTab extends ListActivity {
 
         /** Reference to the button of the layout main.xml */
         Button btn = (Button) findViewById(R.id.btnAdd);
+
+        messageName = (TextView) findViewById(R.id.messageTo);
+        messageName.setText(getIntent().getStringExtra("MESSAGE_TO"));
+
 
         /** Defining the ArrayAdapter to set items to ListView */
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);

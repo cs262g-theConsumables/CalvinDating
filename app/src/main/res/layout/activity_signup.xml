@@ -24,7 +24,7 @@
             android:layout_height="100dp"
             android:layout_weight="0.16" />
 
-        <TextView
+            <TextView
             android:text="Calvin Dating - Sign up"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:hint="Name"
+                android:hint="Username (not Calvin's)"
                 android:textColorLink="@android:color/white"
                 android:textColor="@color/white" />
             </android.support.design.widget.TextInputLayout>
@@ -95,14 +95,33 @@
             android:padding="12dp"
             android:text="Create Account"/>
 
-        <TextView android:id="@+id/link_login"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="Already a member? Login"
-            android:gravity="center"
-            android:textSize="16dip"
-            android:textColor="@color/white" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.16"
+                android:weightSum="1">
 
-    </LinearLayout>
+                <TextView
+                    android:text="Already a member? "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView11"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textAlignment="textEnd"
+                    android:layout_weight="0.56" />
+
+                <TextView android:id="@+id/link_login"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="@string/to_login"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                    android:textAlignment="textStart" />
+            </LinearLayout>
+
+        </LinearLayout>
 </ScrollView>
