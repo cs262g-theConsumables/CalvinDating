@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
-    android:background="#97252B">
+    android:background="@drawable/loginBackground">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,16 +16,10 @@
         android:paddingRight="24dp"
         android:weightSum="1">
 
-        <ImageView
-            android:src="@drawable/calvin_white"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="100dp"
-            android:layout_weight="0.16" />
         <!-- Email Label -->
+
         <TextView
-            android:text="Calvin Dating - Sign in"
+            android:text="SIGN IN"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/label"
@@ -33,7 +27,7 @@
             android:textSize="30sp"
             android:textAlignment="center"
             android:textStyle="normal|bold|italic"
-            android:textColor="@color/white"
+            android:textColor="@android:color/black"
             />
 
         <android.support.design.widget.TextInputLayout
@@ -87,7 +81,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView11"
-            android:textColor="@color/white"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textAlignment="center"
             android:layout_weight="0.10" />
@@ -99,7 +93,7 @@
             android:text="@string/to_signup"
             android:gravity="center"
             android:textSize="18sp"
-            android:textColor="@color/white"
+            android:textColor="@android:color/black"
             android:textAlignment="center"
             android:layout_weight="0.10" />
 
