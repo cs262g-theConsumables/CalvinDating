@@ -19,6 +19,8 @@
     <string name="search_title">Enter Search</string>
     <string name="my_name">Joust Knight</string>
     <string name="user_name">jsk01</string>
+    <string name="to_login"><u>Click here to login</u></string>
+    <string name="to_signup"><u>Click here to create an account</u></string>
 
     <!--For messaging tab -->
     <string name="hintTxtItem">Type message here ...</string>

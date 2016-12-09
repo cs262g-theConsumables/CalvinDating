@@ -22,7 +22,7 @@ public class SurveyActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(), MainActivity.class);
+                Intent i = new Intent(getBaseContext(), EditProfileActivity.class);
                 startActivity(i);
                 Toast.makeText(getBaseContext(), "Survey Complete!", Toast.LENGTH_LONG).show();
             }

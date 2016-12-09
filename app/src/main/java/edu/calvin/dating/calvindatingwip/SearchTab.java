@@ -1,10 +1,12 @@
 package edu.calvin.dating.calvindatingwip;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -49,15 +51,15 @@ public class SearchTab extends Fragment {
         profilesListView.setAdapter(adapter);
 
 
-//        profilesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> a, View v, int i, long l) {
-//                openProfile(profilesArray, i);
-//            }
-//        });
+        profilesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int i, long l) {
+                openProfile(profilesArray, i);
+            }
+        });
 
 
-        return view;
+                return view;
     }
 
     public void buildList(){
@@ -100,6 +102,11 @@ public class SearchTab extends Fragment {
  *          Logan VP
  */
     public void openProfile(ArrayList<HashMap<String, String>> profiles, int pos){
-
+        String name = profiles.get(pos).get("name").toString();
+        String bio =  profiles.get(pos).get("bio").toString();
+        Intent intent = new Intent(getActivity().getBaseContext(), OtherProfile.class);
+        intent.putExtra("PROFILE_NAME",name);
+        intent.putExtra("PROFILE_BIO", bio);
+        startActivity(intent);
     }
 }
