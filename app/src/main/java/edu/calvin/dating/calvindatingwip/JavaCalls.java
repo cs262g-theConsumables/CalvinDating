@@ -15,10 +15,41 @@ import java.sql.Timestamp;
 public class JavaCalls {
 
     /**
+     * A User class for the credentials
+     *
+     * @author Loganvp
+     * @version 12/14/16
+     */
+    public static class Credentials {
+        private String CalvinID, password, username;
+
+        public Credentials(
+                String CalvinID,
+                String password,
+                String username)
+        {
+            this.CalvinID = CalvinID;
+            this.password = password;
+            this.username = username;
+        }
+        //Get methods
+        public String getCalvinID() { return CalvinID; }
+        public String getPassword() { return password; }
+        public String getUsername() { return username; }
+
+        //Set methods
+        public void setCalvinID(String CalvinID) { this.CalvinID = CalvinID; }
+        public void setPassword(String password) { this.password = password; }
+        public void setUsername(String username) { this.username = username; }
+
+
+    }
+
+    /**
      * A User class for the Student relation
      *
      * @author Loganvp, meliornox
-     * @version 12/3/16
+     * @version 12/14/16
      */
     public static class Student {
 
@@ -29,8 +60,6 @@ public class JavaCalls {
         private int hateHope, bunHate, height;
         private boolean hasJob, tulip;
         private Date birthday;
-
-
 
         public Student() { /* a default constructor, required by Gson */ }
 
@@ -243,7 +272,7 @@ public class JavaCalls {
      * A User class for the Message relation
      *
      * @author Loganvp, meliornox
-     * @version 12/3/16
+     * @version 12/14/16
      */
     public static class Message {
 
@@ -286,7 +315,7 @@ public class JavaCalls {
      * A User class for the Match relation
      *
      * @author Loganvp, meliornox
-     * @version 12/3/16
+     * @version 12/14/16
      */
     public static class Match {
 
