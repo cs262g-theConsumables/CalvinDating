@@ -8,6 +8,7 @@ package edu.calvin.dating.calvindatingwip;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,7 +26,6 @@ import android.widget.Toast;
  *              Logan VP
  */
 public class SignupActivity extends AppCompatActivity {
-    private static final String TAG = "SignupActivity";
 
     private EditText _nameText;
     private EditText _emailText;
@@ -75,8 +75,6 @@ public class SignupActivity extends AppCompatActivity {
      *  @authors:   Logan VP
      */
     public void signup() {
-        Log.d(TAG, "Signup");
-
         if (!validate()) {
             onSignupFailed();
             return;
@@ -115,6 +113,15 @@ public class SignupActivity extends AppCompatActivity {
      *  @authors:   Logan VP
      */
     public void onSignupSuccess() {
+        //Save the password and username for future logins
+        SharedPreferences userDetails = getBaseContext().getSharedPreferences("userdetails", MODE_PRIVATE);
+        SharedPreferences.Editor edit = userDetails.edit();
+        edit.clear();
+        edit.putString("username", _nameText.getText().toString().trim());
+        edit.putString("password", _passwordText.getText().toString().trim());
+        edit.commit();
+        Toast.makeText(getBaseContext(), "Login details are saved..", Toast.LENGTH_LONG).show();
+
         _signupButton.setEnabled(true);
         setResult(RESULT_OK, null);
         Intent i = new Intent(getBaseContext(), SurveyActivity.class);

@@ -24,6 +24,7 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(i);
+                EditProfileActivity.this.finish();
                 Toast.makeText(getBaseContext(), "Profile Updated!", Toast.LENGTH_LONG).show();
             }
         });

@@ -1,127 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/calvinMaroon">
+    android:background="@drawable/loginbackground">
 
-        <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="56dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
-
-            <ImageView
-            android:src="@drawable/calvin_white"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="100dp"
-            android:layout_weight="0.16" />
-
-            <TextView
-            android:text="Calvin Dating - Sign up"
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/label"
-            android:layout_weight="0.16"
-            android:textSize="30sp"
-            android:textAlignment="center"
-            android:textStyle="normal|bold|italic"
-            android:textColor="@color/white" />
-
-        <!--  Name Label -->
-            <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-                android:layout_weight="0.16">
-            <EditText android:id="@+id/input_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:hint="Username (not Calvin's)"
-                android:textColorLink="@android:color/white"
-                android:textColor="@color/white" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="0.16">
-                <EditText android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="Email"
-                    android:textColorLink="@android:color/white"
-                    android:textColor="@color/white" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="0.16">
-                <EditText android:id="@+id/input_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:hint="Password"
-                    android:textColorLink="@android:color/white"
-                    android:textColor="@color/white" />
-            </android.support.design.widget.TextInputLayout>
-
-            <!-- Email Label -->
-
-            <!-- Password Label -->
-
-            <!-- Signup Button -->
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_signup"
-            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="12dp"
-            android:text="Create Account"/>
+            android:paddingTop="56dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.16">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.16"
-                android:weightSum="1">
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
                 <TextView
-                    android:text="Already a member? "
-                    android:layout_width="wrap_content"
+                        android:text="SIGN UP"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/label"
+                        android:layout_weight="0.16"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:textStyle="normal|bold|italic"
+                        android:textColor="@color/black" />
+
+                <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                    android:layout_weight="0.16">
+
+                    <EditText android:id="@+id/input_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView11"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textAlignment="textEnd"
-                    android:layout_weight="0.56" />
+                    android:inputType="textCapWords"
+                    android:hint="username"
+                    android:textColorLink="@color/calvinMaroon"
+                    style="@style/Widget.AppCompat.AutoCompleteTextView"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textSize="30sp"
+                        android:elevation="0dp"
+                        android:textColor="@color/calvinMaroon" />
 
-                <TextView android:id="@+id/link_login"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="@string/to_login"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                    android:textAlignment="textStart" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.16"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.16">
+
+                        <EditText android:id="@+id/input_email"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:hint="email "
+                            android:textColorLink="@android:color/white"
+                            android:textColor="@color/calvinMaroon"
+                            style="@style/Widget.AppCompat.AutoCompleteTextView"
+                            android:textSize="30sp"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:maxLength="6" />
+
+                        <TextView
+                            android:text="@string/emailConcat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/emailEnding"
+                            android:layout_weight="1"
+                            android:textSize="20sp"
+                            android:textColor="@color/calvinMaroon"
+                            android:textAlignment="textEnd" />
+                    </LinearLayout>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_weight="0.16">
+
+                            <EditText android:id="@+id/input_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPassword"
+                                android:hint="password "
+                                android:textColorLink="@android:color/white"
+                                android:textColor="@color/calvinMaroon"
+                                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                                android:textSize="30sp"
+                                android:password="false" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:padding="12dp"
+                    android:text="Create Account"
+                    android:layout_weight="0.16" />
+
+                <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.16"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:text="Already a member? "
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView11"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textAlignment="textEnd"
+                                android:layout_weight="0.56"
+                                android:background="@color/dim_foreground_disabled_material_dark"
+                                android:password="false"
+                                android:textColorLink="@android:color/black" />
+
+                            <TextView android:id="@+id/link_login"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:text="@string/to_login"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                                android:textAlignment="textStart"
+                                android:background="@color/dim_foreground_disabled_material_dark"
+                                android:password="false"
+                                android:textColorLink="@android:color/black" />
+                        </LinearLayout>
+
             </LinearLayout>
+        </ScrollView>
 
-        </LinearLayout>
-</ScrollView>
+        <!--  Name Label -->
+
+        <!-- Email Label -->
+
+        <!-- Password Label -->
+
+        <!-- Signup Button -->
+
+    </LinearLayout>
+</RelativeLayout>

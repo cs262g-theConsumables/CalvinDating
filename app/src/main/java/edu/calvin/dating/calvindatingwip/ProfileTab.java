@@ -48,6 +48,7 @@ public class ProfileTab extends Fragment{
             public void onClick(View v) {
                 Intent aboutIntent = new Intent(getActivity(), EditProfileActivity.class);
                 ((MainActivity) getActivity()).startActivity(aboutIntent);
+
             }
         });
 

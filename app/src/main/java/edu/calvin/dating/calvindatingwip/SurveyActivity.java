@@ -24,6 +24,7 @@ public class SurveyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getBaseContext(), EditProfileActivity.class);
                 startActivity(i);
+                SurveyActivity.this.finish();
                 Toast.makeText(getBaseContext(), "Survey Complete!", Toast.LENGTH_LONG).show();
             }
         });

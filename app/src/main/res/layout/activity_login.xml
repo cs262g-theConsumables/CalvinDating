@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
-    android:background="#97252B">
+    android:background="@drawable/loginbackground">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,92 +14,106 @@
         android:paddingRight="24dp"
         android:weightSum="1">
 
-        <ImageView
-            android:src="@drawable/calvin_white"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="100dp"
-            android:layout_weight="0.16" />
         <!-- Email Label -->
-        <TextView
-            android:text="Calvin Dating - Sign in"
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/label"
-            android:layout_weight="0.16"
-            android:textSize="30sp"
-            android:textAlignment="center"
-            android:textStyle="normal|bold|italic"
-            android:textColor="@color/white"
-            />
+            android:layout_weight="0.16">
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-
-            <EditText android:id="@+id/input_email"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="Email"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColorLink="@android:color/white"
-                android:textColor="@android:color/white" />
-        </android.support.design.widget.TextInputLayout>
+                android:orientation="vertical" >
+
+                <TextView
+                    android:text="SIGN IN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/label"
+                    android:layout_weight="0.16"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold|italic"
+                    android:textColor="@android:color/black"
+                    />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.16">
+
+                    <EditText android:id="@+id/input_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="username"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColorLink="@android:color/white"
+                        android:textColor="@color/calvinMaroon"
+                        android:textSize="30sp"
+                        android:inputType="textAutoComplete" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.16">
+
+                    <EditText android:id="@+id/input_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="password "
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:textColorLink="@android:color/white"
+                        android:textColor="@color/calvinMaroon"
+                        android:fontFamily="sans-serif-medium"
+                        android:singleLine="false"
+                        android:selectAllOnFocus="false"
+                        android:textSize="30sp" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:padding="12dp"
+                    android:text="Login"
+                    android:layout_weight="0.16" />
+
+                <TextView
+                    android:text="Not yet a member? "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView11"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:layout_weight="0.16" />
+
+                <TextView android:id="@+id/link_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/to_signup"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textAlignment="center"
+                    android:layout_weight="0.16" />
+
+            </LinearLayout>
+        </ScrollView>
 
         <!-- Password Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
 
-            <EditText android:id="@+id/input_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="Password"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
-                android:textColorLink="@android:color/white"
-                android:textColor="@android:color/white"
-                android:fontFamily="sans-serif-medium"
-                android:singleLine="false"
-                android:selectAllOnFocus="false" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_login"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="12dp"
-            android:text="Login"/>
-
-
-        <TextView
-            android:text="Not yet a member? "
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView11"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textAlignment="center"
-            android:layout_weight="0.10" />
-
-        <TextView android:id="@+id/link_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="@string/to_signup"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            android:layout_weight="0.10" />
 
     </LinearLayout>
-</ScrollView>
+</RelativeLayout>
