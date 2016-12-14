@@ -1,226 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/ScrollView01"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:scrollbars="vertical">
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:orientation="vertical"
-    android:layout_height="fill_parent">
-
-    <TextView
-        android:id="@+id/TextViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Survey"
-        android:textSize="10pt">
-    </TextView>
-
-    <EditText
-        android:id="@+id/EditTextName"
-        android:layout_height="wrap_content"
-        android:hint="What is your full name?"
-        android:inputType="textPersonName"
-        android:layout_width="fill_parent">
-    </EditText>
-
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
-
-
-    <EditText
-        android:id="@+id/EditTextUserName"
-        android:layout_height="wrap_content"
-        android:hint="What is your prefered username?"
-        android:inputType="textPersonName"
-        android:layout_width="fill_parent">
-    </EditText>
-
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
-
-    <EditText
-        android:id="@+id/EditTextBirthday"
-        android:layout_height="wrap_content"
-        android:hint="What is your Birthday? (MM/DD/YYYY)"
-        android:inputType="date"
-        android:layout_width="fill_parent">
-    </EditText>
-
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
-
-    <EditText
-        android:id="@+id/EditTextMajor"
-        android:layout_height="wrap_content"
-        android:hint="What is your major?"
-        android:inputType="textPersonName"
-        android:layout_width="fill_parent">
-    </EditText>
-
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
-
-    <TextView
-        android:text="Current class standing?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView12"
-        android:textSize="18sp" />
-    <Spinner
-        android:id="@+id/SpinnerFeedbackTypeClass"
-        android:layout_height="wrap_content"
-        android:hint="Current class standing?"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:entries="@array/feedbacktypeClass">
-    </Spinner>
+        android:orientation="vertical"
+        android:layout_height="fill_parent">
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+        <TextView
+            android:id="@+id/TextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matching Survey"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1">
+        </TextView>
 
-    <EditText
-        android:id="@+id/EditTextMBTI"
-        android:layout_height="wrap_content"
-        android:hint="What is your Meyers Brigg's result?"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
+        <TextView
+            android:text="Personal Information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/PersonalInformationHeader"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+        <TextView
+            android:text="User Name:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q1" />
 
-    <TextView
-        android:text="What are the 5 points of Calvinism?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView6"
-        android:textSize="18sp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/EditUserName"
+            android:background="@drawable/my_button_bg"
+            android:maxLength="50" />
 
-    <EditText
-        android:id="@+id/EditText12"
-        android:layout_height="wrap_content"
-        android:hint="Point of Calvinism #1"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
-    <EditText
-        android:id="@+id/EditText13"
-        android:layout_height="wrap_content"
-        android:hint="Point of Calvinism #2"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
-    <EditText
-        android:id="@+id/EditText14"
-        android:layout_height="wrap_content"
-        android:hint="Point of Calvinism #3"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
-    <EditText
-        android:id="@+id/EditText15"
-        android:layout_height="wrap_content"
-        android:hint="Point of Calvinism #4"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
-    <EditText
-        android:id="@+id/EditText16"
-        android:layout_height="wrap_content"
-        android:hint="Point of Calvinism #5"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
 
-    <EditText
-        android:id="@+id/EditText17"
-        android:layout_height="wrap_content"
-        android:hint="Favorite place on Calvin's campus?"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
+        <TextView
+            android:text="Myers Briggs Type (MBTI):"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q2" />
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+        <TextView
+            android:autoLink="web"
+            android:text="@string/MBTILink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/MBTILink"
+            android:textColor="#800505"
+            android:clickable="true" />
 
-    <TextView
-        android:text="How much do you passionately dislike Hope College?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView8"
-        android:textSize="18sp" />
-    <Spinner
-        android:id="@+id/SpinnerFeedbackTypeHate"
-        android:layout_height="wrap_content"
-        android:hint="How much do you passionately dislike Hope College?"
-        android:layout_width="fill_parent"
-        android:entries="@array/feedbacktypeHate">
-    </Spinner>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SpinnerMBTI"
+            android:entries="@array/typeMBTI" />
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+        <TextView
+            android:text="5 Points of Calvinism:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q4" />
 
-    <TextView
-        android:text="Which dining hall is your favorite?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView9"
-        android:textSize="18sp" />
-    <Spinner
-        android:id="@+id/SpinnerFeedbackTypeDining"
-        android:layout_height="wrap_content"
-        android:hint="Which dining hall is your favorite?"
-        android:layout_width="fill_parent"
-        android:entries="@array/feedbacktypeDining">
-    </Spinner>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:background="@drawable/my_button_bg"
+            android:id="@+id/EditTotal"
+            android:hint="T" />
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:background="@drawable/my_button_bg"
+            android:id="@+id/EditUnconditional"
+            android:hint="U" />
 
-    <TextView
-        android:text="Favorite Chapel day?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView10"
-        android:textSize="18sp" />
-    <Spinner
-        android:id="@+id/SpinnerFeedbackTypeChapel"
-        android:layout_height="wrap_content"
-        android:hint="Favorite Chapel day?"
-        android:layout_width="fill_parent"
-        android:entries="@array/feedbacktypeChapel">
-    </Spinner>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:background="@drawable/my_button_bg"
+            android:id="@+id/EditLimited"
+            android:hint="L"
+            android:inputType="text" />
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:background="@drawable/my_button_bg"
+            android:id="@+id/EditIrresistable"
+            android:hint="I" />
 
-    <TextView
-        android:text="LOFT?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView7"
-        android:textSize="18sp" />
-    <RadioButton
-        android:id="@+id/CheckBoxResponse1"
-        android:layout_height="wrap_content"
-        android:text="Always"
-        android:layout_width="fill_parent">
-    </RadioButton>
-    <RadioButton
-        android:id="@+id/CheckBoxResponse2"
-        android:layout_height="wrap_content"
-        android:text="Sometimes"
-        android:layout_width="fill_parent">
-    </RadioButton>
-    <RadioButton
-        android:id="@+id/CheckBoxResponse3"
-        android:layout_height="wrap_content"
-        android:text="Never"
-        android:layout_width="fill_parent">
-    </RadioButton>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:background="@drawable/my_button_bg"
+            android:id="@+id/EditPerseverance"
+            android:hint="P"
+            android:inputType="text" />
 
-    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+        <TextView
+            android:text="Favorite Place at Calvin:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q5" />
 
-    <Button
-        android:id="@+id/ButtonSendFeedback"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:layout_width="fill_parent">
-    </Button>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:background="@drawable/my_button_bg"
+            android:id="@+id/EditPlace"
+            android:inputType="text" />
 
-</LinearLayout>
+        <TextView
+            android:text="How much do you passionately dislike Hope College?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q6" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SpinnerHope"
+            android:entries="@array/dislikeHope" />
+
+        <TextView
+            android:text="Best Dining Hall:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q8" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SpinnerDining"
+            android:entries="@array/favoriteDiningHall"/>
+
+        <TextView
+            android:text="Favorite Chapel Day:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q9" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SpinnerChapel"
+            android:entries="@array/favoriteChapelDay" />
+
+
+        <TextView
+            android:text="B-Quiv?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Q10" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SpinnerBQuiv"
+            android:entries="@array/bQuiv" />
+
+        <TextView
+            android:text="Loft?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SpinnerLoft"
+            android:entries="@array/loft"
+            android:layout_gravity="center_horizontal" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray"/>
+
+        <Button
+            android:id="@+id/ButtonSendFeedback"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_width="fill_parent">
+        </Button>
+
+    </LinearLayout>
 </ScrollView>

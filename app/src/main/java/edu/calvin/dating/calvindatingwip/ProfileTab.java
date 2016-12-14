@@ -24,9 +24,6 @@ import java.lang.Object;
 import static android.app.Activity.RESULT_OK;
 import static edu.calvin.dating.calvindatingwip.R.xml.check_box_pref;
 
-
-
-
 public class ProfileTab extends Fragment{
 
     private SharedPreferences myPrefs;
@@ -73,9 +70,7 @@ public class ProfileTab extends Fragment{
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
             }
         });
-
         return view;
-
     }
 
     public void setMyName() {

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     private String dbCalvinID;
     private String dbUsername;
     private String dbPassword;
-    private List<JavaCalls.Credentials> studentSignin = new ArrayList<>();
+    private List<JavaCalls.Student> studentArray = new ArrayList<>();
 
 
     /*  OnCreate
@@ -70,15 +71,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        _signupLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the Signup activity
-                Intent intent = new Intent(getBaseContext(), SignupActivity.class);
-                startActivityForResult(intent, REQUEST_SIGNUP);
-
-            }
-        });
     }
 
     /*  Login - Authenticates the user's credentials with the database
@@ -189,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = _CalvinIDText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (email.isEmpty() || email.length()<6) {
             _CalvinIDText.setError("enter a valid email");
             valid = false;
         } else {
@@ -289,11 +281,42 @@ public class LoginActivity extends AppCompatActivity {
         try {
             for (int i = 0; i < students.length(); i++) {
                 JSONObject student = students.getJSONObject(i);
-                studentSignin.add(new JavaCalls.Credentials(
+                studentArray.add(new JavaCalls.Student(
                         student.getString("CalvinID"),
                         student.getString("password"),
-                        student.getString("username")
-                ));
+                        student.getString("picture"),
+                        student.getString("first"),
+                        student.getString("last"),
+                        student.getString("username"),
+                        student.getString("classYear"),
+                        student.getString("birthday"),
+                        student.getString("homeCity"),
+                        student.getString("homeState"),
+                        student.getString("homeCountry"),
+                        student.getString("major"),
+                        student.getString("majorDepartment"),
+                        student.getString("majorNumber"),
+                        student.getString("gender"),
+                        student.getString("genderWant"),
+                        student.getString("religion"),
+                        student.getString("mbti"),
+                        student.getBoolean("hasJob"),
+                        student.getString("job"),
+                        student.getBoolean("tulip"),
+                        student.getString("hangout"),
+                        student.getInt("hateHope"),
+                        student.getString("bQuiv"),
+                        student.getString("diningPreference"),
+                        student.getString("sports"),
+                        student.getInt("bunHate"),
+                        student.getString("studySpot"),
+                        student.getString("chapelDay"),
+                        student.getString("loft").charAt(0),
+                        student.getInt("height"),
+                        student.getString("nationality"),
+                        student.getString("vocation"),
+                        student.getString("aboutme"),
+                        student.getString("status")));
             }
         } catch (JSONException e) {
             e.printStackTrace();

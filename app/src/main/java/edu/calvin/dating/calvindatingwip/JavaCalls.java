@@ -15,37 +15,6 @@ import java.sql.Timestamp;
 public class JavaCalls {
 
     /**
-     * A User class for the credentials
-     *
-     * @author Loganvp
-     * @version 12/14/16
-     */
-    public static class Credentials {
-        private String CalvinID, password, username;
-
-        public Credentials(
-                String CalvinID,
-                String password,
-                String username)
-        {
-            this.CalvinID = CalvinID;
-            this.password = password;
-            this.username = username;
-        }
-        //Get methods
-        public String getCalvinID() { return CalvinID; }
-        public String getPassword() { return password; }
-        public String getUsername() { return username; }
-
-        //Set methods
-        public void setCalvinID(String CalvinID) { this.CalvinID = CalvinID; }
-        public void setPassword(String password) { this.password = password; }
-        public void setUsername(String username) { this.username = username; }
-
-
-    }
-
-    /**
      * A User class for the Student relation
      *
      * @author Loganvp, meliornox
@@ -59,7 +28,7 @@ public class JavaCalls {
         private char loft;
         private int hateHope, bunHate, height;
         private boolean hasJob, tulip;
-        private Date birthday;
+        private String birthday;
 
         public Student() { /* a default constructor, required by Gson */ }
 
@@ -70,7 +39,7 @@ public class JavaCalls {
                 String last,
                 String username,
                 String classYear,
-                Date birthday,
+                String birthday,
                 String homeCity,
                 String homeState,
                 String homeCountry,
@@ -146,7 +115,7 @@ public class JavaCalls {
         public String getLast() { return last; }
         public String getUsername() { return username; }
         public String getClassYear() { return classYear; }
-        public Date getBirthday() { return birthday; }
+        public String getBirthday() { return birthday.toString(); }
         public String getHomeCity() { return homeCity; }
         public String getHomeState() { return homeState; }
         public String getHomeCountry() { return homeCountry; }
@@ -184,7 +153,7 @@ public class JavaCalls {
         public void setLast(String last) { this.last = last; }
         public void setUsername(String username) { this.username = username; }
         public void setClassYear(String classYear) { this.classYear = classYear; }
-        public void setBirthday(Date birthday) { this.birthday = birthday; }
+        public void setBirthday(String birthday) { this.birthday = birthday; }
         public void setHomeCity(String homeCity) { this.homeCity = homeCity; }
         public void setHomeState(String homeState) { this.homeState = homeState; }
         public void setHomeCountry(String homeCountry) { this.homeCountry = homeCountry; }
