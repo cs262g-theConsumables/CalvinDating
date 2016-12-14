@@ -101,18 +101,16 @@
             android:inputType="text" />
 
         <TextView
-            android:text="Major:"
+            android:text="Department of Major:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Q6" />
 
-        <EditText
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="@drawable/my_button_bg"
-            android:id="@+id/EditMajor"
-            android:inputType="text" />
+            android:id="@+id/spinnerMajor"
+            android:entries="@array/majorDepartment" />
 
         <TextView
             android:text="Gender:"
