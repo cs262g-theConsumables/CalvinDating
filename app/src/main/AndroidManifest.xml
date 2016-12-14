@@ -14,6 +14,13 @@
         android:label="Calvin Dating"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LoadSplashActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,20 +32,12 @@
                 android:name="android.app.default_searchable"
                 android:value=".SearchableActivity" />
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LoginActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".SignupActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".SurveyActivity" />
         <activity android:name=".AboutActivity" />
-        <activity
-            android:name=".SignupActivity"
-            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ProfileTab" />
         <activity android:name=".MessageTab" />
@@ -46,6 +45,8 @@
         <activity android:name=".SearchTab" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".PersonalMessageTab" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".OtherProfile" />
         <activity android:name=".SearchableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -57,11 +58,6 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity
-            android:name=".EditProfileActivity"
-            android:label="@string/title_activity_edit_profile"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".OtherProfile"></activity>
     </application>
 
 </manifest>
