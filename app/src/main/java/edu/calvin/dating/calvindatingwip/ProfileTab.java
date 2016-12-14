@@ -19,9 +19,6 @@ import java.lang.Object;
 
 import static edu.calvin.dating.calvindatingwip.R.xml.check_box_pref;
 
-
-
-
 public class ProfileTab extends Fragment{
 
     private SharedPreferences myPrefs;
@@ -60,9 +57,7 @@ public class ProfileTab extends Fragment{
                 startActivityForResult(intent , 1);
             }
         });
-
         return view;
-
     }
 
     public void setMyName() {

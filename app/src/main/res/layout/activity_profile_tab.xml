@@ -15,20 +15,6 @@
             android:scaleType="centerCrop"
             android:src="@drawable/navigation_header_image" />
 
-        <ImageButton
-            android:id="@+id/user_profile_photo"
-            android:layout_height="150dp"
-            android:background="@drawable/profile_circular_border_imageview"
-            android:elevation="8dp"
-            android:padding="10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/joust"
-            android:layout_width="150dp"
-            android:layout_marginBottom="38dp"
-            android:layout_above="@+id/user_profile_short_bio"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dp" />
-
         <RelativeLayout
             android:id="@+id/profile_layout"
             android:layout_width="match_parent"
@@ -162,5 +148,18 @@
                 android:text="Major: Film Studies \nMinor: International Relations"
                 android:id="@+id/major_minor" />
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/user_profile_photo"
+            android:layout_height="150dp"
+            android:background="@drawable/profile_circular_border_imageview"
+            android:elevation="8dp"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/joust"
+            android:layout_width="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="95dp" />
     </RelativeLayout>
 </ScrollView>
