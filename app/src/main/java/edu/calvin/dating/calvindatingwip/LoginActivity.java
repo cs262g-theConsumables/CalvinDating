@@ -281,7 +281,7 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * Converts the JSON player data to an arraylist suitable for a getting the info
      *
-     * @param student JSON array of player objects
+     * @param students JSON array of player objects
      *
      * sets the variables dbCalvinID, dbUsername, dbPassword.
      */
