@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /*  LoginActivity
  *  Creates a Login screen. Uses email and password. Also has a
@@ -40,10 +42,10 @@ public class LoginActivity extends AppCompatActivity {
     private Button _loginButton;
     private TextView _signupLink;
 
-    private String dbCalvinID;
-    private String dbUsername;
+    private String calvinID;
     private String dbPassword;
-    private List<JavaCalls.Credentials> studentSignin = new ArrayList<>();
+    private String checkPassword;
+    private List<JavaCalls.Student> studentArray = new ArrayList<>();
 
 
     /*  OnCreate
@@ -66,19 +68,121 @@ public class LoginActivity extends AppCompatActivity {
         _loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+                calvinID = _CalvinIDText.getText().toString();
+                new GetLoginTask().execute(createURL(calvinID));
             }
         });
 
-        _signupLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start the Signup activity
-                Intent intent = new Intent(getBaseContext(), SignupActivity.class);
-                startActivityForResult(intent, REQUEST_SIGNUP);
+    }
 
+
+
+    /**
+     * Inner class for GETing the player list from the course server asynchronously
+     */
+    private class GetLoginTask extends AsyncTask<URL, Void, JSONArray> {
+
+        @Override
+        protected JSONArray doInBackground(URL... params) {
+            HttpURLConnection connection = null;
+            StringBuilder jsonText = new StringBuilder();
+            JSONArray result = null;
+            try {
+                connection = (HttpURLConnection) params[0].openConnection();
+                if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    BufferedReader reader = new BufferedReader(
+                            new InputStreamReader(connection.getInputStream()));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        jsonText.append(line);
+                    }
+//                    Log.d(TAG, jsonText.toString());
+                    if (jsonText.charAt(0) == '[') {
+                        result = new JSONArray(jsonText.toString());
+                    } else if (jsonText.toString().equals("null")) {
+                        result = new JSONArray();
+                    } else {
+                        result = new JSONArray().put(new JSONObject(jsonText.toString()));
+                    }
+                } else {
+                    throw new Exception();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
             }
-        });
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray student) {
+            if (student == null) {
+                Toast.makeText(LoginActivity.this, getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Empty");
+            } else if (student.length() == 0) {
+                Toast.makeText(LoginActivity.this, getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Empty");
+            } else {
+                convertJSONtoStrings(student);
+            }
+            login();
+        }
+    }
+
+    /**
+     * Converts the JSON player data to an arraylist suitable for a getting the info
+     *
+     * @param students JSON array of player objects
+     *
+     * sets the variables dbCalvinID, dbUsername, dbPassword.
+     */
+    private void convertJSONtoStrings(JSONArray students) {
+        try {
+            for (int i = 0; i < students.length(); i++) {
+                JSONObject student = students.getJSONObject(i);
+                studentArray.add(new JavaCalls.Student(
+                        student.getString("CalvinID"),
+                        student.getString("password"),
+                        student.getString("picture"),
+                        student.getString("first"),
+                        student.getString("last"),
+                        student.getString("username"),
+                        student.getString("classYear"),
+                        student.getString("birthday"),
+                        student.getString("homeCity"),
+                        student.getString("homeState"),
+                        student.getString("homeCountry"),
+                        student.getString("major"),
+                        student.getString("majorDepartment"),
+                        student.getString("majorNumber"),
+                        student.getString("gender"),
+                        student.getString("genderWant"),
+                        student.getString("religion"),
+                        student.getString("mbti"),
+                        student.getBoolean("hasJob"),
+                        student.getString("job"),
+                        student.getBoolean("tulip"),
+                        student.getString("hangout"),
+                        student.getInt("hateHope"),
+                        student.getString("bQuiv"),
+                        student.getString("diningPreference"),
+                        student.getString("sports"),
+                        student.getInt("bunHate"),
+                        student.getString("studySpot"),
+                        student.getString("chapelDay"),
+                        student.getString("loft").charAt(0),
+                        student.getInt("height"),
+                        student.getString("nationality"),
+                        student.getString("vocation"),
+                        student.getString("aboutMe"),
+                        student.getString("status")));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     /*  Login - Authenticates the user's credentials with the database
@@ -90,6 +194,22 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void login() {
         //Log.d(TAG, "Login");
+
+//        String calvinID = _CalvinIDText.getText().toString();
+        checkPassword = _passwordText.getText().toString();
+
+
+
+//        Log.d(TAG, Integer.toString(studentArray.size()));
+
+        if (studentArray.size() == 0) {
+            Toast.makeText(getBaseContext(), "Array Empty", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, Integer.toString(studentArray.size()));
+        } else {
+            dbPassword = studentArray.get(0).getPassword();
+            Log.d(TAG, dbPassword);
+            Log.d(TAG, checkPassword);
+        }
         if (!validate()) {
             onLoginFailed();
             return;
@@ -111,7 +231,7 @@ public class LoginActivity extends AppCompatActivity {
         String usernamePreference = userDetails.getString("username", "");
         String passwordPreference = userDetails.getString("password", "");
 
-        new GetLoginTask().execute(createURL(CalvinID));
+
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
@@ -163,6 +283,7 @@ public class LoginActivity extends AppCompatActivity {
         //Log.d(TAG, "LoginSuccess");
         _loginButton.setEnabled(true);
         Intent i = new Intent(getBaseContext(), MainActivity.class);
+        i.putExtra("USERNAME", calvinID);
         startActivity(i);
         finish();
 
@@ -179,29 +300,28 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /*  validate - checks for empty inputs and sends error if not valid.
+     *             no longer checks the email because the server handles that
      *
      *  @return:    valid   set to false if empty. True otherwise.
      *  @authors:   Logan VP
      */
     public boolean validate() {
-        boolean valid = true;
+        boolean valid;
 
-        String email = _CalvinIDText.getText().toString();
-        String password = _passwordText.getText().toString();
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _CalvinIDText.setError("enter a valid email");
+        //Validates the password
+        if (checkPassword.equals(dbPassword)) {
+            valid = true;
+        } else if(dbPassword == null){
+            _CalvinIDText.setError("No user by this name");
             valid = false;
-        } else {
-            _CalvinIDText.setError(null);
+        }
+        else {
+            _passwordText.setError("incorrect password");
+            valid = false;;
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
-            valid = false;
-        } else {
-            _passwordText.setError(null);
-        }
+
 
         return valid;
     }
@@ -219,85 +339,11 @@ public class LoginActivity extends AppCompatActivity {
 
             return new URL(urlString);
         } catch (Exception e) {
-            Toast.makeText(this, getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
         }
 
         return null;
     }
 
-    /**
-     * Inner class for GETing the player list from the course server asynchronously
-     */
-    private class GetLoginTask extends AsyncTask<URL, Void, JSONArray> {
-
-        @Override
-        protected JSONArray doInBackground(URL... params) {
-            HttpURLConnection connection = null;
-            StringBuilder jsonText = new StringBuilder();
-            JSONArray result = null;
-            try {
-                connection = (HttpURLConnection) params[0].openConnection();
-                if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                    BufferedReader reader = new BufferedReader(
-                            new InputStreamReader(connection.getInputStream()));
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        jsonText.append(line);
-                    }
-                    //Log.d(TAG, jsonText.toString());
-                    if (jsonText.charAt(0) == '[') {
-                        result = new JSONArray(jsonText.toString());
-                    } else if (jsonText.toString().equals("null")) {
-                        result = new JSONArray();
-                    } else {
-                        result = new JSONArray().put(new JSONObject(jsonText.toString()));
-                    }
-                } else {
-                    throw new Exception();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                if (connection != null) {
-                    connection.disconnect();
-                }
-            }
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute(JSONArray student) {
-            if (student == null) {
-                Toast.makeText(LoginActivity.this, getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
-            } else if (student.length() == 0) {
-                Toast.makeText(LoginActivity.this, getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
-            } else {
-                convertJSONtoStrings(student);
-            }
-            //LoginActivity.this.updateDisplay();
-        }
-    }
-
-    /**
-     * Converts the JSON player data to an arraylist suitable for a getting the info
-     *
-     * @param student JSON array of player objects
-     *
-     * sets the variables dbCalvinID, dbUsername, dbPassword.
-     */
-    private void convertJSONtoStrings(JSONArray students) {
-        try {
-            for (int i = 0; i < students.length(); i++) {
-                JSONObject student = students.getJSONObject(i);
-                studentSignin.add(new JavaCalls.Credentials(
-                        student.getString("CalvinID"),
-                        student.getString("password"),
-                        student.getString("username")
-                ));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 }
 
