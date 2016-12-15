@@ -19,22 +19,25 @@ import android.content.Context;
 import android.widget.Toast;
 import android.util.Log;
 
-import java.lang.Object;
+
+import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
-import static edu.calvin.dating.calvindatingwip.R.xml.check_box_pref;
 
 public class ProfileTab extends Fragment{
 
     private SharedPreferences myPrefs;
     private TextView myName;
-    private ImageView myImage;
     private Button chooseImage;
     private Button editProfile;
     private static int RESULT_LOAD_IMG;
     private String imgDecodableString;
     private View view;
     private Context context;
+    public MainActivity mainActivity;
+    private int myProfileIndex;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -47,7 +50,16 @@ public class ProfileTab extends Fragment{
 
         //create references to widgets
         myName = (TextView) view.findViewById(R.id.user_profile_name);
-        setMyName();
+
+        mainActivity = (MainActivity) getActivity();
+//        Log.d("MainActivity", mainActivity.currentUser);
+        for(int i = 0; i < mainActivity.studentArray.size(); i++){
+            if(mainActivity.studentArray.get(i).getCalvinID().equals(mainActivity.currentUser)){
+                myProfileIndex = i;
+            }
+        }
+        Log.d("MainActivity", Integer.toString(myProfileIndex));
+        setValues();
 
         editProfile = (Button) view.findViewById(R.id.editProfile);
         editProfile.setOnClickListener(new View.OnClickListener() {
@@ -72,20 +84,44 @@ public class ProfileTab extends Fragment{
         });
         return view;
     }
-
-    public void setMyName() {
+    /*setValues - sets all the informational values for the profile
+     *
+     */
+    public void setValues() {
         if (!myPrefs.getBoolean("pref_username", false)) {
-            myName.setText(getResources().getString(R.string.my_name));
+            String first = mainActivity.studentArray.get(myProfileIndex).getFirst();
+            String last = mainActivity.studentArray.get(myProfileIndex).getLast();
+            myName.setText(first + " " + last);
             Log.d("TAG", "Change occurred");
         } else {
-            myName.setText(getResources().getString(R.string.user_name));
+            myName.setText(mainActivity.studentArray.get(myProfileIndex).getUsername());
             Log.d("TAG", "Change occurred");
         }
+        TextView shortBio = (TextView) view.findViewById(R.id.user_profile_short_bio);
+        shortBio.setText(mainActivity.studentArray.get(myProfileIndex).getAboutMe());
+
+        TextView lookingFor = (TextView) view.findViewById(R.id.looking_for);
+        lookingFor.setText("Looking for: " + mainActivity.studentArray.get(myProfileIndex).getGenderWant());
+
+        TextView activities = (TextView) view.findViewById(R.id.activities);
+        activities.setText("Favorite study spot: " + mainActivity.studentArray.get(myProfileIndex).getStudySpot());
+
+        TextView vocation = (TextView) view.findViewById(R.id.fun_facts);
+        vocation.setText(mainActivity.studentArray.get(myProfileIndex).getVocation());
+
+        TextView homeCountry = (TextView) view.findViewById(R.id.hangout_spot);
+        homeCountry.setText("Home Planet: " + mainActivity.studentArray.get(myProfileIndex).getHomeCountry());
+
+        TextView major = (TextView) view.findViewById(R.id.major_minor);
+        major.setText("Major: " + mainActivity.studentArray.get(myProfileIndex).getMajor());
+
+
+
+
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
         try {
             // When an Image is picked
             if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK
