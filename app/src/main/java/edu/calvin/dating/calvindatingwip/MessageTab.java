@@ -24,6 +24,7 @@ public class MessageTab extends Fragment {
 
     private ArrayList<String> names;
     private ListView usersListView;
+        public MainActivity mainActivity;
 
     /*  onCreateView method - called to create the view for the tab
      *
@@ -35,6 +36,7 @@ public class MessageTab extends Fragment {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_message_tab, container, false);
         names = new ArrayList<>();
+        mainActivity = (MainActivity) getActivity();
         buildList();
 
         usersListView = (ListView) view.findViewById(R.id.usersListView);
@@ -68,16 +70,12 @@ public class MessageTab extends Fragment {
 
 
     public void buildList(){
-        names.add("Fiona");
-        names.add("Donkey");
-        names.add("Puss in Boots");
-        names.add("Dragon");
-        names.add("Farquaad");
-        names.add("Gingerbread Man");
-        names.add("Blind Mice #1");
-        names.add("Baby Bear");
-        names.add("Pinocchio");
-        names.add("Pig #3");
+        for(JavaCalls.Student item : mainActivity.studentArray){
+            if(!item.getCalvinID().equals(mainActivity.currentUser)){
+                String fullName = item.getFirst() + " " + item.getLast();
+                names.add(fullName);
+            }
+        }
 
 
 
