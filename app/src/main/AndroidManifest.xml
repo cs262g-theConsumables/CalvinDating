@@ -48,6 +48,7 @@
         <activity android:name=".PersonalMessageTab" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".OtherProfile" />
+        <activity android:name=".HelpPageActivity" />
         <activity android:name=".SearchableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

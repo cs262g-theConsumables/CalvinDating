@@ -17,6 +17,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/*  PersonalMessageActivity
+ *  Creates an personal message page accessible through the clicking a name.
+ *  We were not able to do anything further with this activity due to complexity
+ *  and time constraints
+ *
+ *  @authors:   Logan VP
+ *
+ */
 public class PersonalMessageTab extends ListActivity {
 
     private ArrayList<String> list = new ArrayList<String>();
@@ -45,7 +53,7 @@ public class PersonalMessageTab extends ListActivity {
             @Override
             public void onClick(View v) {
                 EditText edit = (EditText) findViewById(R.id.txtItem);
-                list.add(edit.getText().toString());
+                list.add("Han: " + edit.getText().toString());
                 edit.setText("");
                 adapter.notifyDataSetChanged();
             }
@@ -57,6 +65,6 @@ public class PersonalMessageTab extends ListActivity {
         /** Setting the adapter to the ListView */
         setListAdapter(adapter);
 
-        list.add("How's it going?");;
+        list.add(messageName.getText() +": I love you.");;
     }
 }

@@ -73,6 +73,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        _signupLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the Signup activity
+                Intent intent = new Intent(getBaseContext(), SignupActivity.class);
+                startActivityForResult(intent, REQUEST_SIGNUP);
+
+            }
+        });
     }
 
 
@@ -223,13 +232,14 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String CalvinID = _CalvinIDText.getText().toString();
-        String password = _passwordText.getText().toString();
-
-        //fetch the shared preference to check login
-        SharedPreferences userDetails = getBaseContext().getSharedPreferences("userdetails", MODE_PRIVATE);
-        String usernamePreference = userDetails.getString("username", "");
-        String passwordPreference = userDetails.getString("password", "");
+        //Tried implementing saving the password with SharedPreferences
+//        String CalvinID = _CalvinIDText.getText().toString();
+//        String password = _passwordText.getText().toString();
+//
+//        //fetch the shared preference to check login
+//        SharedPreferences userDetails = getBaseContext().getSharedPreferences("userdetails", MODE_PRIVATE);
+//        String usernamePreference = userDetails.getString("username", "");
+//        String passwordPreference = userDetails.getString("password", "");
 
 
 

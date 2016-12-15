@@ -10,21 +10,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.calvin.dating.calvindatingwip.AboutActivity">
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:weightSum="1">
-
-        <CalendarView
-            android:layout_width="wrap_content"
-            android:layout_height="193dp"
-            android:id="@+id/calendarView" />
-
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="307dp"
             android:layout_height="match_parent"
             android:layout_below="@+id/linearLayout"
             android:layout_alignParentLeft="true"
@@ -34,10 +27,34 @@
             android:layout_marginTop="32dp"
             android:id="@+id/textView2"
             android:textSize="30sp"
-            android:layout_weight="1.75"
             android:textAlignment="center"
-            android:text="The Consumables   Dating App" />
-
+            android:text="The Calvin Dating App" />
+        <TextView
+            android:text="The Dev Team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView14" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/devteam1"
+            android:id="@+id/imageView2" />
+        <TextView
+            android:text="Vision Statement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView13" />
+        <TextView
+            android:text="Calvin Dating is the dating app that helps bring together individuals on the Calvin College campus who are looking for a match made in heaven. Unlike OKCupid or Match.com, Calvin Dating was crafted with only Calvin Students in mind. By specializing this app strictly to the Calvin College culture our users can find the best possible match to the profile that you have created. The app involves four main activities that allow the user to create a profile, meet new people, communicate with their matches, and plan multiple dates. Users will be matched on a Calvin centric survey that also takes into account factors from their MBTI survey to their preference on man-buns."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:id="@+id/textView"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1.75" />
     </LinearLayout>
-
 </RelativeLayout>
