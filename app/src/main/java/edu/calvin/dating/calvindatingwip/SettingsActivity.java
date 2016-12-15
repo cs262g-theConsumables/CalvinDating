@@ -3,6 +3,11 @@ package edu.calvin.dating.calvindatingwip;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+    /*  SettingsActivity
+     *  Creates a setting page accessible through the menu that has a fragment for preferences.
+     *
+     *  @authors:   Drew VL
+     */
 public class SettingsActivity extends AppCompatActivity {
 
     @Override

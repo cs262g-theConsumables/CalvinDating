@@ -9,6 +9,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/*  SurveyActivity
+ *  Creates the page to show the Matching Survey page.
+ *  It implements an onclick listener that will bring the user to the EditProfile and
+ *  submit the results to the server.
+ *
+ *  @return:    view    page viewer that inflates its own context.
+ *  @authors:   Drew VL
+ *              Logan VP
+ */
 public class SurveyActivity extends AppCompatActivity {
 
     private Button _Button;

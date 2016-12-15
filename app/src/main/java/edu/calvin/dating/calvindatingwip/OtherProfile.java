@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-
+/*  OtherProfile - It loads the profile of someone else
+ *
+ *  @authors: Drew VL, Logan VPs
+ */
 public class OtherProfile extends AppCompatActivity {
 
     private TextView username;

@@ -2,6 +2,8 @@ package edu.calvin.dating.calvindatingwip;
 
 /**
  * Created by Drew on 10/17/2016.
+ *
+ * This holds the SharedPreference fragment that will show on SettingsActivity
  */
 
 import android.os.Bundle;
