@@ -2,11 +2,11 @@
 
 To Login:
 -----------------------
-Username:   Password:   
-rrr23       theSandIsEverywhere   
-glo67       imAGeneral   
-hsf96       gunsAndGlory   
-fn2187      notEvil   
+Username & Password:   
+rrr23.......theSandIsEverywhere   
+glo67.......imAGeneral   
+hsf96.......gunsAndGlory   
+fn2187......notEvil   
 
 Thank You Stakeholders!
 ------------------------
