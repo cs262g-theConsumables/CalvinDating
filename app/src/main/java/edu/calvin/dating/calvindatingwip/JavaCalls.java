@@ -181,6 +181,8 @@ public class JavaCalls {
         public void setVocation(String vocation) { this.vocation = vocation; }
         public void setAboutMe(String aboutMe) { this.aboutMe = aboutMe; }
         public void setStatus(String status) { this.status = status; }
+
+
     }
 
     /**
