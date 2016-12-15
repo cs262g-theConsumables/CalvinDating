@@ -23,6 +23,8 @@ public class SearchTab extends Fragment {
     private ArrayList<HashMap<String, String>> profilesArray;
     private ListView profilesListView;
     SimpleAdapter adapter;
+    public MainActivity mainActivity;
+
 
     /*  onCreateView method - called to create the view for the tab
      *
@@ -35,6 +37,7 @@ public class SearchTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_search_tab, container, false);
         profilesArray = new ArrayList<>();
+        mainActivity = (MainActivity) getActivity();
 
         buildList();
         profilesListView = (ListView) view.findViewById(R.id.profileListView);
@@ -63,34 +66,15 @@ public class SearchTab extends Fragment {
     }
 
     public void buildList(){
-        ArrayList<String> names = new ArrayList<>();
-        names.add("Donkey");
-        names.add("Fiona");
-        names.add("Puss in Boots");
-        names.add("Dragon");
-        names.add("Farquaad");
-        names.add("Gingerbread Man");
-        names.add("Blind Mice #1");
-        names.add("Baby Bear");
-        names.add("Pinocchio");
-        names.add("Pig #3");
-        ArrayList<String> bios = new ArrayList<>();
-        bios.add("Pain in the ass but a good friend");
-        bios.add("Willing to try new things");
-        bios.add("Loyal and stylish");
-        bios.add("Hot headed but I have a soft side");
-        bios.add("Short and love bear skin rugs");
-        bios.add("Sweat and never sour");
-        bios.add("Not worried about your looks");
-        bios.add("Kind but in grieving period");
-        bios.add("Honest or terrible liar, your choice");
-        bios.add("I own a nice brick house");
-
-        for(int i = 0; i < names.size(); i++) {
+        for(JavaCalls.Student item : mainActivity.studentArray){
             HashMap<String, String> map = new HashMap<String, String>();
-            map.put("name", names.get(i));
-            map.put("bio", bios.get(i));
-            profilesArray.add(map);
+            if(!item.getCalvinID().equals(mainActivity.currentUser)){
+                String fullName = item.getFirst() + " " + item.getLast();
+                map.put("name", fullName);
+                map.put("bio", item.getAboutMe());
+                map.put("calvinID", item.getCalvinID());
+                profilesArray.add(map);
+            }
         }
 
     }
@@ -102,11 +86,24 @@ public class SearchTab extends Fragment {
  *          Logan VP
  */
     public void openProfile(ArrayList<HashMap<String, String>> profiles, int pos){
-        String name = profiles.get(pos).get("name").toString();
-        String bio =  profiles.get(pos).get("bio").toString();
+        String calvinID = profiles.get(pos).get("calvinID").toString();
+        int myProfileIndex = 0;
+        for(int i = 0; i < mainActivity.studentArray.size(); i++){
+            if(mainActivity.studentArray.get(i).getCalvinID().equals(calvinID)){
+                myProfileIndex = i;
+            }
+        }
+        String fullName = mainActivity.studentArray.get(myProfileIndex).getFirst() + " " +
+                mainActivity.studentArray.get(myProfileIndex).getLast();
+
         Intent intent = new Intent(getActivity().getBaseContext(), OtherProfile.class);
-        intent.putExtra("PROFILE_NAME",name);
-        intent.putExtra("PROFILE_BIO", bio);
+        intent.putExtra("NAME", fullName);
+        intent.putExtra("BIO",mainActivity.studentArray.get(myProfileIndex).getAboutMe() );
+        intent.putExtra("LOOKING_FOR",mainActivity.studentArray.get(myProfileIndex).getGenderWant() );
+        intent.putExtra("ACTIVITIES",mainActivity.studentArray.get(myProfileIndex).getStudySpot() );
+        intent.putExtra("VOCATION",mainActivity.studentArray.get(myProfileIndex).getVocation() );
+        intent.putExtra("HOME_COUNTRY",mainActivity.studentArray.get(myProfileIndex).getHomeCountry() );
+        intent.putExtra("MAJOR",mainActivity.studentArray.get(myProfileIndex).getMajor() );
         startActivity(intent);
     }
 }
