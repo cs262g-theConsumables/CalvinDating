@@ -17,7 +17,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-
+/*  MainActivity
+ *  This is the big Kahuna! It houses all the base activities that the tab fragments work off.
+ *  It also lets the search bar at the top initiate.
+ *  It also has a menu inflator for SurveyActivity, HelpPageActivity, SettingsActivity and AboutActivity
+ *
+ *  @return:    Menu    page viewer that inflates the menu.
+ *  @authors:   Drew VL
+ *              Logan VP
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -69,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
 
-// Get the SearchView and set the searchable configuration
+    // Get the SearchView and set the searchable configuration
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
         // Assumes current activity is the searchable activity
@@ -90,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(aboutIntent);
                 return true;
 
-            case R.id.settings:     //opens settings tab
+            case R.id.settings:
+                //opens settings tab
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
                 return true;
@@ -99,11 +108,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent surveyIntent = new Intent(this, SurveyActivity.class);
                 startActivity(surveyIntent);
                 return true;
+            case R.id.help:
+                //opens the new activity (survey page)
+                Intent helpIntent = new Intent(this, HelpPageActivity.class);
+                startActivity(helpIntent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    // Removes the ability to go back with the back button
     @Override
     public void onBackPressed() {
     }

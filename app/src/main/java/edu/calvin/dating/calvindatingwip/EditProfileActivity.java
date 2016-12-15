@@ -7,7 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
+/*  EditProfileActivity
+ *  Creates the page to show the edit profile page.
+ *  It implements an onclick listener that will bring the user back to the MainActivity and
+ *  submit the results to the server.
+ *
+ *  @return:    view    page viewer that inflates its own context.
+ *  @authors:   Drew VL
+ *              Logan VP
+ */
 public class EditProfileActivity extends AppCompatActivity {
     private Button _Button;
     @Override

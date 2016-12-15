@@ -22,13 +22,18 @@ import android.widget.ImageView;
  */
 
 
-
+/*  SplashActivity
+ *  Creates a load screen on startuo. It impliments an animation that grows the text in the center
+ *  of the screen
+ *
+ *  @return:    view    page viewer that inflates its own contect.
+ *  @authors:   Logan VP
+ */
 public class LoadSplashActivity extends AppCompatActivity{
     /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 5000;
 
     @Override
-
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_load_splash);

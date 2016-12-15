@@ -8,6 +8,8 @@
         android:title="About" />
     <item android:id="@+id/settings"
         android:title="Settings" />
+    <item android:id="@+id/help"
+        android:title="Help Page" />
     <item android:id="@+id/search"
         android:title="@string/search_title"
         android:icon="@drawable/ic_search"

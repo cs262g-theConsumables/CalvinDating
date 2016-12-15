@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+/*  SearchableActivity - it should find a person in the list of people.
+ *
+ *  @authors: Drew VL
+ */
 public class SearchableActivity extends AppCompatActivity {
 
     @Override

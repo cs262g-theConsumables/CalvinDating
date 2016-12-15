@@ -6,7 +6,10 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-
+/*  WebViewActivity - It loads the Calvin Box office website in the app.
+ *
+ *  @authors: Logan VP
+ */
 public class WebViewActivity extends AppCompatActivity {
 
     private WebView webView;

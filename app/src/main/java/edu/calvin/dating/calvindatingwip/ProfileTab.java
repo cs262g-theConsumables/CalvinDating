@@ -19,9 +19,14 @@ import java.lang.Object;
 
 import static edu.calvin.dating.calvindatingwip.R.xml.check_box_pref;
 
-
-
-
+/*  OtherProfile - It loads the profile of the studentArray that is from the login. It also allows
+ *                  for changing of username shown.
+ *
+ *  @params: inflater, container, savedInstanceState
+ *  @return:   view - the view of the tab
+ *
+ *  @authors: Drew VL, Logan VPs
+ */
 public class ProfileTab extends Fragment{
 
     private SharedPreferences myPrefs;
